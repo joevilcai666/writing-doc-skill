@@ -151,13 +151,16 @@ git clone --depth 1 --branch v0.1.0 https://github.com/joevilcai666/writing-doc-
 
 根据原来的安装方式操作：
 
+- Codex CLI 插件：运行 `codex plugin remove writing-doc@writing-doc-skill --json`。此命令移除已安装插件和本地插件缓存。Codex 0.162.1 的全新隔离试验已通过公开 v0.1.0 安装与卸载验证。
 - `skills`：在原项目中运行 `npx skills remove writing-doc`，选择相同的 Agent 和范围。只有全局安装才加 `--global`。
 - Claude Code：只卸载当前项目的本地副本时，使用 `claude plugin uninstall writing-doc@writing-doc-skill --scope local`。原安装范围不同，则替换范围。
 - Codex Skill Installer 或手动复制：找到已安装的 `writing-doc` 文件夹，将它移出客户端技能目录。技能列表未刷新时，重启客户端。
 
-需要移除整个市场时，使用 `claude plugin marketplace remove writing-doc-skill`。它可能卸载该市场的插件，并移除相应的启用配置。未指定 `--scope` 时，它会移除所有设置范围中的市场声明。这可能影响当前项目以外的已安装副本。只做本地卸载时，优先使用上面带范围的插件卸载命令。市场移除的范围说明见 [Claude CLI 参考文档](https://code.claude.com/docs/en/plugins/cli-reference#plugin-marketplace-remove)。
+Codex 市场移除是独立的可选操作。只有需要移除已配置的市场源时，才使用 `codex plugin marketplace remove writing-doc-skill --json`。插件移除保留市场注册。市场移除会影响该源的配置，以及后续从该源发现插件的能力。这个可选命令尚未验证。
 
-卸载路径也尚未通过公开验证：**Planned for v0.1.0 verification（待发布验证）**。卸载不会删除你用技能写出的文档。
+需要移除整个 Claude 市场时，使用 `claude plugin marketplace remove writing-doc-skill`。它可能卸载该市场的插件，并移除相应的启用配置。未指定 `--scope` 时，它会移除所有设置范围中的市场声明。这可能影响当前项目以外的已安装副本。只做本地卸载时，优先使用上面带范围的插件卸载命令。市场移除的范围说明见 [Claude CLI 参考文档](https://code.claude.com/docs/en/plugins/cli-reference#plugin-marketplace-remove)。
+
+其他卸载路径尚未通过公开验证：**Planned for v0.1.0 verification（待发布验证）**。卸载不会删除你用技能写出的文档。
 
 ## 隐私
 
@@ -173,10 +176,10 @@ Agent、模型服务、工具和安装器各自适用自己的数据政策。第
 | --- | --- |
 | 已实现（Implemented） | 共享技能、客户端清单、确认图片、虚构示例和本地检查已存在。 |
 | 本地验证（Locally verified） | 准确发布提交通过 125 项测试、完整发布检查、全历史隐私扫描、技能验证器、真实隔离 Codex 安装和 Claude 严格验证。 |
-| 公开验证（Publicly verified） | 匿名 main/tag 克隆、Release ZIP 与校验值、默认与固定版本的 `skills` 安装、Codex 固定版本插件安装、Claude 默认与固定版本插件安装均通过。安装技能与标签源码一致。 |
+| 公开验证（Publicly verified） | 匿名 main/tag 克隆、Release ZIP 与校验值、默认与固定版本的 `skills` 安装、Codex 固定版本插件安装与卸载、Claude 默认与固定版本插件安装均通过。安装技能与标签源码一致。 |
 | 用户验收（User accepted） | 此包的实现尚无用户验收记录。 |
 
-[v0.1.0 Release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) 已公开。Codex CLI 0.162.1 没有 `plugin validate` 命令，发布检查改用真实市场安装和逐字节比较。模型行为、读者理解、桌面发现和卸载路径尚未验证。详见[当前工作方式与限制](HOW_IT_WORKS.md)和[分发状态](docs/distribution.md)。这两份维护文档目前为英文。
+[v0.1.0 Release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) 已公开。Codex CLI 0.162.1 没有 `plugin validate` 命令，发布检查改用真实市场安装和逐字节比较。模型行为、读者理解、桌面发现和其他卸载路径尚未验证。详见[当前工作方式与限制](HOW_IT_WORKS.md)和[分发状态](docs/distribution.md)。这两份维护文档目前为英文。
 
 ## 让下一位读者少走一步弯路
 

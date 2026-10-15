@@ -29,7 +29,10 @@ Public tests used skills 1.7.2, Codex CLI 0.162.1, and Claude Code 2.1.295.
 Default and tagged `skills` installations passed. Codex's pinned marketplace and Claude's main/tag marketplaces passed.
 Each installed `SKILL.md` matched the tagged source byte for byte.
 The manual tagged folder copy also matched. Desktop discovery and model execution remain unverified.
-The separate Codex Skill Installer and removal routes remain pending.
+The Codex CLI plugin remove route passed a fresh isolated public v0.1.0 install/remove trial.
+The plugin cache and enablement entry disappear. Marketplace registration and its source checkout remain.
+Optional Codex marketplace removal affects the configured source and remains unverified.
+The separate Codex Skill Installer and other removal routes remain pending.
 
 The short `skills` command and unpinned Claude marketplace select the default branch.
 Tagged commands select `v0.1.0`. A tag fixes package source, not the client or installer version.
@@ -51,8 +54,8 @@ Private vulnerability reporting is enabled. Topics: `agent-skills`, `codex`, `cl
 Social-preview upload remains pending. GitHub rejected the 1,114,198-byte original because it exceeds 1 MB.
 An upload-only 972,388-byte PNG preserves the exact decoded RGBA pixels and has no private metadata.
 The user's active browser prevented the second upload. No completed upload or public preview is claimed.
-Official directory submission, desktop discovery, actual model tasks, uninstall checks, and user acceptance remain pending.
+Official directory submission, desktop discovery, actual model tasks, other uninstall checks, and user acceptance remain pending.
 
 See the [verification record](verification/v0.1.0.md) for commands, source identity, digests, and limits.
 
-最后更新时间：2026-10-15
+最后更新时间：2026-10-15 21:34（Asia/Shanghai）

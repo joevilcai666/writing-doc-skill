@@ -153,13 +153,16 @@ For other clients, use their documented Agent Skills directory. Confirm that the
 
 Use the route that matches your installation:
 
+- Codex CLI plugin: run `codex plugin remove writing-doc@writing-doc-skill --json`. This removes the installed plugin and its local plugin cache. A fresh isolated public v0.1.0 install/remove trial passed with Codex 0.162.1.
 - `skills`: run `npx skills remove writing-doc` in the same project. Select the same agent and scope. Add `--global` only for a global installation.
 - Claude Code: for removal from the current project's local scope only, use `claude plugin uninstall writing-doc@writing-doc-skill --scope local`. Use your original scope if it differs.
 - Codex Skill Installer or manual copy: locate the installed `writing-doc` folder and move that folder out of the client's skill directory. Restart the client if its skill list does not refresh.
 
-To remove the marketplace itself, use `claude plugin marketplace remove writing-doc-skill`. This can uninstall plugins from that marketplace and remove their enabled settings. The command without `--scope` removes marketplace declarations from every settings scope. It can affect copies outside the current project. Prefer the scoped plugin-uninstall command above for local removal only. See the [Claude CLI reference](https://code.claude.com/docs/en/plugins/cli-reference#plugin-marketplace-remove) for the marketplace command's scope.
+Codex marketplace removal is optional and separate from plugin removal. Use `codex plugin marketplace remove writing-doc-skill --json` only to remove the configured marketplace source. Plugin removal retains the marketplace registration. Marketplace removal affects that source configuration and its availability for future plugin discovery. This optional command remains unverified.
 
-These removal routes also await public verification: **Planned for v0.1.0 verification**. They do not remove documents you created with the skill.
+To remove the Claude marketplace itself, use `claude plugin marketplace remove writing-doc-skill`. This can uninstall plugins from that marketplace and remove their enabled settings. The command without `--scope` removes marketplace declarations from every settings scope. It can affect copies outside the current project. Prefer the scoped plugin-uninstall command above for local removal only. See the [Claude CLI reference](https://code.claude.com/docs/en/plugins/cli-reference#plugin-marketplace-remove) for the marketplace command's scope.
+
+Other removal routes also await public verification: **Planned for v0.1.0 verification**. They do not remove documents you created with the skill.
 
 ## Privacy
 
@@ -175,10 +178,10 @@ The package does not modify `AGENTS.md`, `CLAUDE.md`, or global agent instructio
 | --- | --- |
 | Implemented | One shared skill, client manifests, approved visuals, synthetic demo, and local checks exist. |
 | Locally verified | The exact release commit passed 125 tests, the full release gate, full-history privacy checks, the skill validator, real isolated Codex installation, and Claude strict validation. |
-| Publicly verified | Anonymous main/tag clones, the Release ZIP and checksum, default/tagged `skills` installations, Codex pinned plugin installation, and Claude main/tag plugin installations passed. Installed skills matched the tag. |
+| Publicly verified | Anonymous main/tag clones, the Release ZIP and checksum, default/tagged `skills` installations, Codex pinned plugin installation/removal, and Claude main/tag plugin installations passed. Installed skills matched the tag. |
 | User accepted | No acceptance evidence exists for this package implementation. |
 
-Release [v0.1.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) is public. Codex CLI 0.162.1 has no `plugin validate` command. The release gate used real marketplace installation and a byte comparison instead. Model behavior, reader outcomes, desktop discovery, and removal routes remain unverified. See [current behavior and limits](HOW_IT_WORKS.md) and [distribution status](docs/distribution.md).
+Release [v0.1.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) is public. Codex CLI 0.162.1 has no `plugin validate` command. The release gate used real marketplace installation and a byte comparison instead. Model behavior, reader outcomes, desktop discovery, and other removal routes remain unverified. See [current behavior and limits](HOW_IT_WORKS.md) and [distribution status](docs/distribution.md).
 
 ## Help improve the next reader's experience
 

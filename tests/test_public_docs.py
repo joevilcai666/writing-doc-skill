@@ -90,6 +90,20 @@ class PublicDocumentTests(unittest.TestCase):
                 self.assertIn(scopes, switch)
                 self.assertIn("claude plugin uninstall writing-doc@writing-doc-skill --scope local", removal)
 
+    def test_codex_plugin_removal_has_separate_optional_marketplace_route(self):
+        for name, heading, next_heading, effects in (
+            ("README.md", "## Uninstall", "## Privacy",
+             ("local plugin cache", "marketplace registration", "configured marketplace source", "optional")),
+            ("README.zh-CN.md", "## 卸载", "## 隐私",
+             ("本地插件缓存", "市场注册", "已配置的市场源", "可选")),
+        ):
+            with self.subTest(name=name):
+                removal = self.read(name).split(heading, 1)[1].split(next_heading, 1)[0]
+                self.assertIn("codex plugin remove writing-doc@writing-doc-skill --json", removal)
+                self.assertIn("codex plugin marketplace remove writing-doc-skill --json", removal)
+                for effect in effects:
+                    self.assertIn(effect, removal)
+
     def test_privacy_distinguishes_package_from_installer_telemetry(self):
         for name, heading, next_heading, package_tokens, installer_tokens in (
             ("README.md", "## Privacy", "## What is verified",

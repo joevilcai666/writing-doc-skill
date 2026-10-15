@@ -105,14 +105,14 @@ The built-in image generator produced the preview, and a proportional resize set
 | --- | --- | --- |
 | Implemented | The files or behavior exist in the repository. | Version, license, manifests, skill metadata, shared skill, five PNG assets, synthetic rubric, local gates, public docs, deterministic archive builder, release note, and verification template exist. |
 | Locally verified | A local check passed on an identified source state. | Release commit `9630868f9c0b491cfd28511fa88f551f4cd5f5d3` passed 125 tests, including 19 archive tests, the full release gate, full-history privacy checks, the skill validator, real isolated Codex installation, and Claude strict validation. |
-| Publicly verified | A check passed against a public clone, download, or installation. | Anonymous main/tag clones and Release downloads passed. Default/tagged skills installations, Codex pinned plugin installation, and Claude main/tag plugin installations passed. Installed skills matched the tag byte for byte. |
+| Publicly verified | A check passed against a public clone, download, or installation. | Anonymous main/tag clones and Release downloads passed. Default/tagged skills installations, Codex pinned plugin installation/removal, and Claude main/tag plugin installations passed. Installed skills matched the tag byte for byte. |
 | User accepted | The user explicitly accepted the result under review. | The user approved the four source images. No user acceptance evidence exists for this package implementation or actual reader outcomes. |
 
 The local checks cover package metadata, required skill boundaries, PNG dimensions, and source-copy integrity.
 They do not establish agent behavior or reader comprehension.
 Visual inspection covers the preview text, composition, and legibility.
 The [verification record](docs/verification/v0.1.0.md) identifies commands, environment, source commit, and evidence limits.
-The READMEs label the separate Codex Skill Installer and removal routes as pending.
+The READMEs label the separate Codex Skill Installer and other removal routes as pending.
 The [distribution record](docs/distribution.md) contains channel status, not an endorsement claim.
 
 ## Synthetic demonstration and local rubric
@@ -161,7 +161,8 @@ flowchart TD
     O --> P["Inspect archive paths, privacy, and SHA-256"]
     P --> L["Publish the tag, archive, and checksum"]
     L --> M["Public clone, checksum, and CLI installations verified"]
-    M --> N["Record evidence on main; user acceptance remains pending"]
+    M --> R["Codex plugin removal verified; marketplace registration retained"]
+    R --> N["Record evidence on main; user acceptance remains pending"]
 ```
 
 The privacy scanner reads tracked files and non-ignored untracked files. This includes hidden files.
@@ -219,6 +220,11 @@ It returns failure if a command or byte comparison fails. No validator stub ente
 The public README files exist.
 The tagged archive and checksum are public, and anonymous downloads match the local bytes and GitHub asset digest.
 Public CLI installation and discovery passed in isolated configurations.
+A fresh pinned Codex install/remove trial also passed in isolated HOME, CODEX_HOME, and XDG_CONFIG_HOME directories.
+`codex plugin remove writing-doc@writing-doc-skill --json` removes the installed plugin cache and plugin enablement entry.
+The plugin list becomes empty. The marketplace registration and source checkout remain.
+Optional marketplace removal is a separate operation on the configured source and remains unverified.
+The trial used a credential-free environment whitelist and unchanged snapshots of three normal client control files.
 The repository has zero registered runners. Equivalent checks run directly on the exact local commit.
 The tagged docs retain the candidate snapshot. Current publication evidence lives on `main`.
 
@@ -228,7 +234,7 @@ Local evidence must identify the exact commit, commands, environment, and result
 These checks detect fixed patterns and structural defects.
 They do not prove that all private information is absent.
 Ignored untracked files, Git author metadata, unreachable Git objects, and compressed archive contents need separate review when relevant.
-Desktop discovery, model requests, uninstall routes, and user acceptance remain unverified.
+Desktop discovery, model requests, other uninstall routes, and user acceptance remain unverified.
 The skills.sh skill URL returned HTTP 200 with a missing-skill fallback. The repository page returned HTTP 404.
 The package therefore has no verified skills.sh listing or official directory submission.
 GitHub private vulnerability reporting is enabled, and all five requested topics are present.
@@ -290,4 +296,4 @@ Later evidence changes on `main` do not rebuild or replace that asset.
 The [tagged release note](docs/releases/v0.1.0.md) describes the candidate snapshot.
 The [verification record](docs/verification/v0.1.0.md) reports the final publication checks.
 
-最后更新时间：2026-10-15（Asia/Shanghai）
+最后更新时间：2026-10-15 21:34（Asia/Shanghai）
