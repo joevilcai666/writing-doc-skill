@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible problem in the skill or local checks.
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: Use synthetic documents and values. Do not include credentials, private documents, private URLs, personal paths, or chat transcripts. Use the private reporting route in SECURITY.md for vulnerabilities.
+  - type: input
+    id: version
+    attributes:
+      label: Package version or commit
+      placeholder: v0.1.0 or the exact commit
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Client and environment
+      description: Include the client version, operating system, and installation route.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include the task, target reader, and a short synthetic source document or command.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+      description: Include sanitized output and the exit code when relevant.
+    validations:
+      required: true

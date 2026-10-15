@@ -1,0 +1,16 @@
+{
+  "name": "writing-doc-skill",
+  "description": "Clear technical documentation for a specific audience, shared across supported agent clients.",
+  "owner": {"name": "Writing Doc Contributors"},
+  "plugins": [
+    {
+      "name": "writing-doc",
+      "version": "0.1.0",
+      "description": "Turn verbose AI output into technical documentation a target audience can understand and act on.",
+      "author": {"name": "Writing Doc Contributors"},
+      "repository": "https://github.com/joevilcai666/writing-doc-skill",
+      "license": "MIT",
+      "source": "./"
+    }
+  ]
+}

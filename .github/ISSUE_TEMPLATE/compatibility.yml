@@ -1,0 +1,40 @@
+name: Client compatibility
+description: Report an installation, discovery, or invocation problem.
+title: "[Compatibility]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: Use synthetic values and remove private paths. Do not attach account details, credentials, private documents, or full client logs.
+  - type: input
+    id: client
+    attributes:
+      label: Client name and exact version
+    validations:
+      required: true
+  - type: input
+    id: package
+    attributes:
+      label: Package tag or commit
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: Operating system and architecture
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Installation route and exact command
+      description: State the scope. Replace private local paths with placeholders.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and observed result
+      description: Include the exit code and whether the client lists the skill or plugin.
+    validations:
+      required: true

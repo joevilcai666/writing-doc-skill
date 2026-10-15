@@ -1,0 +1,15 @@
+[
+  {
+    "id": "lantern-setup",
+    "required_literals": [
+      "Python 3.11+",
+      "LANTERN_TOKEN",
+      "python -m lantern serve --port 4310",
+      "http://127.0.0.1:4310/health",
+      "HTTP 200",
+      "WARNING: Never commit LANTERN_TOKEN."
+    ],
+    "answer_first_before": "## Why this service exists",
+    "required_sections": ["Prerequisites", "Steps", "Expected result", "Troubleshooting"]
+  }
+]

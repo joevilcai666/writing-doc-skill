@@ -1,0 +1,7 @@
+interface:
+  display_name: "Writing Doc"
+  short_description: "Make technical documentation clear and actionable."
+  brand_color: "#0B3155"
+  default_prompt: "Use $writing-doc to rewrite this technical document for its target audience."
+policy:
+  allow_implicit_invocation: true

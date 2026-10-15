@@ -1,0 +1,29 @@
+name: Reader task request
+description: Suggest a concrete improvement to technical documentation work.
+title: "[Task]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: Keep examples synthetic. The skill covers technical documentation. Marketing copy, literary writing, and format-only conversion are outside its scope.
+  - type: textarea
+    id: reader
+    attributes:
+      label: Reader and task
+      description: Who reads the document, and what must they understand or do?
+    validations:
+      required: true
+  - type: textarea
+    id: obstacle
+    attributes:
+      label: Current obstacle
+      description: Give a small synthetic example of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Useful result
+      description: Describe what the reader can do after the improvement.
+    validations:
+      required: true
