@@ -12,7 +12,7 @@ writing-doc turns AI output into clear, useful documentation your audience can u
 
 ## Install
 
-**Planned for v0.1.0 verification.** Public installation is not verified yet. The repository and tag must exist before these remote commands can work.
+**Public installation verified for v0.1.0.** The default-branch and tagged `skills` routes passed in isolated projects with skills 1.7.2. See the [exact verification record](docs/verification/v0.1.0.md).
 
 With Node.js, npm, and Git available, run this command in your project:
 
@@ -76,9 +76,19 @@ Its scope excludes marketing copy, literary writing, and format-only conversion.
 
 ## Other install methods
 
-All routes below are **Planned for v0.1.0 verification**. Install one copy for your chosen agent to avoid duplicate skill entries.
+The Codex CLI plugin and Claude Code routes below passed public installation checks. Desktop selection and model behavior remain unverified. Install one copy for your chosen agent to avoid duplicate skill entries.
 
 ### Codex
+
+The Codex CLI route passed with version 0.162.1:
+
+```sh
+codex plugin marketplace add joevilcai666/writing-doc-skill --ref v0.1.0 --json
+codex plugin add writing-doc@writing-doc-skill --json
+codex plugin list --json
+```
+
+The plugin appeared installed and enabled. Its installed `SKILL.md` matched the tag byte for byte.
 
 Use the built-in Skill Installer in a Codex chat:
 
@@ -86,9 +96,9 @@ Use the built-in Skill Installer in a Codex chat:
 $skill-installer install https://github.com/joevilcai666/writing-doc-skill/tree/v0.1.0/skills/writing-doc
 ```
 
-This route installs the shared skill. Confirm that `writing-doc` appears in the skill selector. If it does not appear, restart Codex. See the [official local skill guidance](https://learn.chatgpt.com/docs/build-skills#install-curated-skills-for-local-use).
+This separate Skill Installer route remains **Planned for v0.1.0 verification**. It installs the shared skill. Confirm that `writing-doc` appears in the skill selector. If it does not appear, restart Codex. See the [official local skill guidance](https://learn.chatgpt.com/docs/build-skills#install-curated-skills-for-local-use).
 
-The repository also contains portable and Codex plugin manifests. Plugin installation through the OpenAI directory remains unverified. The package has no directory listing at this stage.
+Plugin installation through the OpenAI directory remains unverified. No official directory submission or listing exists.
 
 ### Claude Code
 
@@ -99,7 +109,7 @@ claude plugin marketplace add joevilcai666/writing-doc-skill
 claude plugin install writing-doc@writing-doc-skill --scope local
 ```
 
-The marketplace registration applies to your user account. The plugin's local scope applies only to you in the current project. Start a new Claude Code session, then confirm that the plugin appears in `/plugin`.
+These commands passed with Claude Code 2.1.295 in isolated homes. The CLI listed the plugin as enabled, and the installed skill matched the source. The marketplace registration applies to your user account. The plugin's local scope applies only to you in the current project. Start a new Claude Code session, then confirm that the plugin appears in `/plugin`.
 
 See the [official Claude Code installation guide](https://code.claude.com/docs/en/discover-plugins).
 
@@ -125,7 +135,7 @@ claude plugin marketplace add joevilcai666/writing-doc-skill#v0.1.0
 
 After you add the tagged marketplace, reinstall the affected copies in their original scopes. For a local copy, repeat `claude plugin install writing-doc@writing-doc-skill --scope local`.
 
-A Git tag fixes the skill source, not the version of your installer or agent. These commands remain **Planned for v0.1.0 verification**.
+A Git tag fixes the skill source, not the version of your installer or agent. Tagged `skills`, Codex CLI, and Claude marketplace installations passed. Replacement of an existing marketplace registration remains unverified.
 
 ### Manual installation
 
@@ -135,7 +145,7 @@ With Git available, clone the tagged source into a new directory:
 git clone --depth 1 --branch v0.1.0 https://github.com/joevilcai666/writing-doc-skill.git
 ```
 
-Copy the entire `skills/writing-doc` folder to your client's skill directory. For a Codex project, use `.agents/skills/writing-doc`. Keep `SKILL.md` inside that folder. If a `writing-doc` folder already exists, compare it before you replace anything.
+Copy the entire `skills/writing-doc` folder to your client's skill directory. For a Codex project, use `.agents/skills/writing-doc`. The tagged clone and this folder copy passed a byte comparison. Client discovery remains unverified. Keep `SKILL.md` inside that folder. If a `writing-doc` folder already exists, compare it before you replace anything.
 
 For other clients, use their documented Agent Skills directory. Confirm that the client lists `writing-doc`, then try a small synthetic document.
 
@@ -164,11 +174,11 @@ The package does not modify `AGENTS.md`, `CLAUDE.md`, or global agent instructio
 | Evidence | Current status |
 | --- | --- |
 | Implemented | One shared skill, client manifests, approved visuals, synthetic demo, and local checks exist. |
-| Locally verified | Package and rubric checks pass locally. The skill and Claude strict validators passed. These checks do not prove installation or reader comprehension. |
-| Publicly verified | No public clone, release download, or installation check completed. All remote install commands remain planned. |
+| Locally verified | The exact release commit passed 125 tests, the full release gate, full-history privacy checks, the skill validator, real isolated Codex installation, and Claude strict validation. |
+| Publicly verified | Anonymous main/tag clones, the Release ZIP and checksum, default/tagged `skills` installations, Codex pinned plugin installation, and Claude main/tag plugin installations passed. Installed skills matched the tag. |
 | User accepted | No acceptance evidence exists for this package implementation. |
 
-Publication still requires a clean public history and the remaining release checks. The installed Codex CLI has no plugin validator. See [current behavior and limits](HOW_IT_WORKS.md) and [distribution status](docs/distribution.md) for details.
+Release [v0.1.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) is public. Codex CLI 0.162.1 has no `plugin validate` command. The release gate used real marketplace installation and a byte comparison instead. Model behavior, reader outcomes, desktop discovery, and removal routes remain unverified. See [current behavior and limits](HOW_IT_WORKS.md) and [distribution status](docs/distribution.md).
 
 ## Help improve the next reader's experience
 

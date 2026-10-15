@@ -8,7 +8,7 @@ The package contains instructions for the user's agent, not a separate document 
 This repository defines the package identity for release `0.1.0`.
 The package uses the MIT license.
 Its configured repository URL is `https://github.com/joevilcai666/writing-doc-skill`.
-The configured URL does not establish public availability.
+The repository and [v0.1.0 Release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) are public.
 
 ## Find the part you need
 
@@ -56,7 +56,7 @@ The Claude marketplace exposes one local plugin from the repository root.
 | `demo/` and `evals/` | Show one synthetic revision and check fixed document conditions. |
 | `scripts/` and `tests/` | Check package structure, privacy patterns, and local behavior. |
 | `scripts/build_release.py` | Builds the ZIP from tracked current files and supplies its SHA-256 checksum. |
-| READMEs and `docs/distribution.md` | Explain use, planned installation routes, and observed distribution status. |
+| READMEs and `docs/distribution.md` | Explain use, verified installation routes, and observed distribution status. |
 
 The `agents/openai.yaml` file supplies the skill name and default prompt for OpenAI clients.
 Its invocation policy permits implicit invocation.
@@ -104,15 +104,15 @@ The built-in image generator produced the preview, and a proportional resize set
 | Evidence level | Meaning | Current state |
 | --- | --- | --- |
 | Implemented | The files or behavior exist in the repository. | Version, license, manifests, skill metadata, shared skill, five PNG assets, synthetic rubric, local gates, public docs, deterministic archive builder, release note, and verification template exist. |
-| Locally verified | A local check passed on an identified source state. | The local source state passed 125 tests with Python 3.9.6 on macOS arm64. Nineteen tests cover archive behavior. The default repository checker, skill validator, and Claude strict validator passed. Codex validation reported `SKIP`. The release gate remains blocked. |
-| Publicly verified | A check passed against a public clone, download, or installation. | No public clone, installation, or runtime check completed. Remote install commands remain planned. |
+| Locally verified | A local check passed on an identified source state. | Release commit `9630868f9c0b491cfd28511fa88f551f4cd5f5d3` passed 125 tests, including 19 archive tests, the full release gate, full-history privacy checks, the skill validator, real isolated Codex installation, and Claude strict validation. |
+| Publicly verified | A check passed against a public clone, download, or installation. | Anonymous main/tag clones and Release downloads passed. Default/tagged skills installations, Codex pinned plugin installation, and Claude main/tag plugin installations passed. Installed skills matched the tag byte for byte. |
 | User accepted | The user explicitly accepted the result under review. | The user approved the four source images. No user acceptance evidence exists for this package implementation or actual reader outcomes. |
 
 The local checks cover package metadata, required skill boundaries, PNG dimensions, and source-copy integrity.
-They do not establish client installation, agent behavior, or public availability.
+They do not establish agent behavior or reader comprehension.
 Visual inspection covers the preview text, composition, and legibility.
-No public clone, release, or package acceptance check completed.
-The READMEs label every remote installation route `Planned for v0.1.0 verification`.
+The [verification record](docs/verification/v0.1.0.md) identifies commands, environment, source commit, and evidence limits.
+The READMEs label the separate Codex Skill Installer and removal routes as pending.
 The [distribution record](docs/distribution.md) contains channel status, not an endorsement claim.
 
 ## Synthetic demonstration and local rubric
@@ -135,7 +135,7 @@ The full local suite includes these checks and the repository gate tests.
 
 These results cover static synthetic documents and deterministic checks.
 They do not prove that an agent follows the skill, that a service runs, or that a real reader understands the result.
-Language retention, review-only behavior, scope selection, client installation, and public availability still need separate evidence.
+Language retention, review-only behavior, scope selection, desktop discovery, and reader outcomes still need runtime evidence.
 
 ## Local repository and privacy gates
 
@@ -153,15 +153,15 @@ flowchart TD
     D --> F["Strict text parsing, metadata, private-value, and message-format checks"]
     E --> G["Local PASS or blocking failure"]
     F --> H{"All release requirements pass?"}
-    I["Required public files and external validators"] --> H
+    I["Required files, skill validator, real isolated Codex install, Claude strict validator"] --> H
     G --> H
     H -->|"No"| J["Stop publication and record the blocker"]
     H -->|"Yes"| K["Review the exact commit and clean public history"]
     K --> O["Build tracked current files into a deterministic ZIP"]
     O --> P["Inspect archive paths, privacy, and SHA-256"]
     P --> L["Publish the tag, archive, and checksum"]
-    L --> M["Verify public clone, download, and installation"]
-    M --> N["Record evidence and request user acceptance"]
+    L --> M["Public clone, checksum, and CLI installations verified"]
+    M --> N["Record evidence on main; user acceptance remains pending"]
 ```
 
 The privacy scanner reads tracked files and non-ignored untracked files. This includes hidden files.
@@ -208,14 +208,19 @@ Each file lost only its 68-byte `eXIf` payload and 12-byte chunk envelope.
 All safe chunks remain byte-for-byte identical. These include `IHDR`, `IDAT`, and `IEND`.
 The current Claude marketplace supplies the description that its strict validator requires.
 
-The private development history still contains five earlier PNG blobs with `eXIf` metadata.
-The full history scan therefore fails, as required.
-The release process must create a clean reviewed public history and rerun both release checks before any public push.
-The installed Codex CLI has no plugin validation command, so its required external validator remains unavailable.
+The public repository starts from one reviewed root commit with the final package tree.
+Its complete reachable history passes the privacy scan, including the annotated release tag.
+Public author, committer, and tagger identities use the GitHub noreply address and receive a separate identity check.
+Codex CLI 0.162.1 has no `plugin validate` command.
+The release gate uses a private validator override that performs real marketplace registration, installation, listing, and installed-skill byte comparison.
+Each validator run uses isolated HOME, CODEX_HOME, and XDG_CONFIG_HOME directories.
+It returns failure if a command or byte comparison fails. No validator stub enters the public package.
 
 The public README files exist.
-The local candidate archive and checksum exist. Public installation evidence remains incomplete.
-The release flow in the diagram describes the gate's required sequence, not completed publication.
+The tagged archive and checksum are public, and anonymous downloads match the local bytes and GitHub asset digest.
+Public CLI installation and discovery passed in isolated configurations.
+The repository has zero registered runners. Equivalent checks run directly on the exact local commit.
+The tagged docs retain the candidate snapshot. Current publication evidence lives on `main`.
 
 No GitHub Actions status or billing check serves as the release gate.
 Local evidence must identify the exact commit, commands, environment, and results before publication.
@@ -223,14 +228,20 @@ Local evidence must identify the exact commit, commands, environment, and result
 These checks detect fixed patterns and structural defects.
 They do not prove that all private information is absent.
 Ignored untracked files, Git author metadata, unreachable Git objects, and compressed archive contents need separate review when relevant.
-No public release or package acceptance check completed.
+Desktop discovery, model requests, uninstall routes, and user acceptance remain unverified.
+The skills.sh skill URL returned HTTP 200 with a missing-skill fallback. The repository page returned HTTP 404.
+The package therefore has no verified skills.sh listing or official directory submission.
+GitHub private vulnerability reporting is enabled, and all five requested topics are present.
+Social-preview upload remains pending. GitHub rejected the original 1,114,198-byte PNG because it exceeds 1 MB.
+A separate 972,388-byte lossless copy has identical decoded RGBA pixels and no private PNG metadata.
+The browser became unavailable for automation while the user used Safari, so the second upload did not complete.
 
 ## Deterministic release archive
 
 A checksum is a file's fingerprint. The same bytes produce the same SHA-256 value.
 It checks file identity, not publisher identity or the absence of private data.
 
-`python3 scripts/build_release.py --output dist` builds a local release candidate.
+`python3 scripts/build_release.py --output dist` builds a local package archive.
 The API is `build_release(root: Path, output_dir: Path) -> tuple[Path, str]`.
 It returns the archive path and its SHA-256 value.
 For version `0.1.0`, the outputs are `writing-doc-skill-v0.1.0.zip` and its `.zip.sha256` sidecar.
@@ -273,7 +284,10 @@ They also cover private text, PNG metadata, source symlinks, destination symlink
 Encoding checks cover all four BOM-less UTF-16 and UTF-32 forms across current files, index blobs, reachable history, deleted history, and archives.
 Safe ASCII, UTF-8, text with a BOM, and PNG data retain their accepted behavior.
 Archive checks do not inspect Git history or prove client installation.
-The [release note](docs/releases/v0.1.0.md) describes the candidate.
-The [verification template](docs/verification/v0.1.0.md) leaves every result pending for the exact public candidate.
+The Release asset contains the tested tag, with 44 files and 9,368,270 bytes.
+Two builds produced identical bytes. The public download has SHA-256 `466d52a773f98ccf196ed93dd79a144862d60e661e4041cdfb4065960fbc660b`.
+Later evidence changes on `main` do not rebuild or replace that asset.
+The [tagged release note](docs/releases/v0.1.0.md) describes the candidate snapshot.
+The [verification record](docs/verification/v0.1.0.md) reports the final publication checks.
 
-最后更新时间：2026-10-15 20:45（Asia/Shanghai）
+最后更新时间：2026-10-15（Asia/Shanghai）
