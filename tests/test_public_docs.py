@@ -126,7 +126,7 @@ class PublicDocumentTests(unittest.TestCase):
         self.assertGreaterEqual(text.count("```mermaid"), 2)
         self.assertLessEqual(text.count("```mermaid"), 4)
         self.assertIn("The skill is an editor's desk: it keeps the source facts but rearranges them so the intended reader can find and use them.", text)
-        self.assertIn("最后更新时间：2026-10-15", text)
+        self.assertIn("最后更新时间：2026-10-16", text)
 
     def test_distribution_rows_use_only_defined_statuses(self):
         text = self.read("docs/distribution.md")

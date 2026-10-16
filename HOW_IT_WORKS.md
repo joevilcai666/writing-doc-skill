@@ -4,6 +4,8 @@
 
 The skill is an editor's desk: it keeps the source facts but rearranges them so the intended reader can find and use them.
 
+To create and maintain a living product explanation like this document for another project, use the [how-it-works skill](https://github.com/joevilcai666/how-it-works-skill).
+
 The package contains instructions for the user's agent, not a separate document service.
 This repository defines the package identity for release `0.1.0`.
 The package uses the MIT license.
@@ -296,4 +298,4 @@ Later evidence changes on `main` do not rebuild or replace that asset.
 The [tagged release note](docs/releases/v0.1.0.md) describes the candidate snapshot.
 The [verification record](docs/verification/v0.1.0.md) reports the final publication checks.
 
-最后更新时间：2026-10-15 21:34（Asia/Shanghai）
+最后更新时间：2026-10-16（Asia/Shanghai）
