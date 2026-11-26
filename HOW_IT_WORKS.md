@@ -105,8 +105,8 @@ The built-in image generator produced the preview, and a proportional resize set
 | Evidence level | Meaning | Current state |
 | --- | --- | --- |
 | Implemented | The files or behavior exist in the repository. | Version, license, manifests, skill metadata, shared skill, five PNG assets, synthetic rubric, local gates, public docs, deterministic archive builder, release note, and verification template exist. |
-| Locally verified | A local check passed on an identified source state. | The v0.2.0 verification record identifies the exact source and lists the suite, release gate, and isolated installs. |
-| Publicly verified | A check passed against a public clone, download, or installation. | The v0.2.0 verification record identifies the public tag, download, and install routes checked. The v0.1.0 record covers its earlier public trials. |
+| Locally verified | A local check passed on an identified source state. | The tagged commit passed 127 tests and the full Release Gate. The verification record lists the Python versions and isolated installs. |
+| Publicly verified | A check passed against a public clone, download, or installation. | The anonymous v0.2.0 tag clone and asset downloads match the release source and build. Three isolated client installs match the tag. |
 | User accepted | The user explicitly accepted the result under review. | The user approved the four source images. No user acceptance evidence exists for this package implementation or actual reader outcomes. |
 
 The local checks cover package metadata, required skill boundaries, PNG dimensions, and source-copy integrity.
@@ -211,7 +211,7 @@ The current Claude marketplace supplies the description that its strict validato
 
 The public repository starts from one reviewed root commit with the final package tree.
 Its complete reachable history passes the privacy scan, including the annotated release tag.
-Public author, committer, and tagger identities use the GitHub noreply address and receive a separate identity check.
+Git author, committer, and tagger identities receive a separate check.
 Codex CLI 0.162.1 has no `plugin validate` command.
 The release gate uses a private validator override that performs real marketplace registration, installation, listing, and installed-skill byte comparison.
 Each validator run uses isolated HOME, CODEX_HOME, and XDG_CONFIG_HOME directories.

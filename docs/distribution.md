@@ -11,7 +11,7 @@ Only these status values apply: `planned`, `published`, `listed`, `submitted`, `
 | Channel | Status | Evidence or remaining action |
 | --- | --- | --- |
 | GitHub repository | published | [Public repository](https://github.com/joevilcai666/writing-doc-skill). Anonymous main/tag clones passed. |
-| GitHub Release | published | [v0.2.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.2.0), deterministic ZIP and checksum. See the verification record for asset checks. |
+| GitHub Release | published | [v0.2.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.2.0), deterministic ZIP and checksum. Anonymous downloads match the local build and GitHub asset digests. |
 | skills.sh | planned | [Skill URL](https://skills.sh/joevilcai666/writing-doc-skill/writing-doc) returned HTTP 200 with a missing-skill fallback and no canonical GitHub source. [Repository URL](https://skills.sh/joevilcai666/writing-doc-skill) returned HTTP 404. No verified listing. |
 | OpenAI directory | planned | No submission receipt or official listing. Public self-hosted Codex plugin installation passed. |
 | Anthropic directory | planned | No submission receipt or official listing. Public self-hosted Claude marketplace installation passed. |
@@ -24,7 +24,7 @@ Publication and self-hosted marketplaces do not imply endorsement or official re
 ## Install routes and version identity
 
 The [English README](../README.md) and [Chinese README](../README.zh-CN.md) contain the commands.
-The v0.2.0 verification record lists the installer and client versions and compares each tested installation with the tagged skill files. The [v0.1.0 record](verification/v0.1.0.md) covers its earlier tests.
+Pinned Codex CLI 0.162.1 and Claude Code 2.1.218 plugin installs and a tagged skills 1.7.2 project install passed in isolated configurations. All three installed skill files matched the tag. The [v0.1.0 record](verification/v0.1.0.md) covers its earlier tests.
 The Codex CLI plugin remove route passed a fresh isolated public v0.1.0 install/remove trial.
 The plugin cache and enablement entry disappear. Marketplace registration and its source checkout remain.
 Optional Codex marketplace removal affects the configured source and remains unverified.
