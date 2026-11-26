@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-26",
+  "baseline_commit": "91f1f906d573835ad55c02bec6c0103d0f234b91",
+  "candidate_source": "Previously saved standalone SKILL.md and reader-outcomes.md; ZIP version 2 could not be downloaded, so archive parity is unverified.",
+  "generation": "Same inherited model/runtime; no model, sampling, or tool configuration overrides. Exact server model build and sampling parameters are not exposed. Three fresh threads per arm, six tasks per thread; cases within a thread are not independent.",
+  "initial_model_outputs": 36,
+  "final_new_outputs": 18,
+  "randomization": "Python random.Random(261126) initial; Random(261127) final ordering; version labels removed before judge threads.",
+  "judge": "Two independent fresh model threads, same rubric; no human readers or reading-time measurements.",
+  "scope": "Synthetic supplied-source tasks, no live service claims. Case5 assesses output boundary, not sandbox file-write enforcement.",
+  "hashes": {
+    "old-SKILL.md": "b07d36c5e1cfb07d052fd81547b1b42aa2c15408cd6db975c2dba7ee481aa7c5",
+    "new-SKILL.md": "2ab4c67ccb12b5dd4960f38a2f89ff56f2fa65b0ff2579df5d69eed49f6ba5cd",
+    "tasks.json": "b473646aecb865401a3641165ddbf6e2346c1f927c8dc8b2179f0b8742492117"
+  }
+}

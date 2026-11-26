@@ -1,5 +1,7 @@
 # Distribution status
 
+The v0.2.0 candidate has passed local package and isolated Codex installation checks. Publication and normal global updates remain unverified; v0.1.0 channel evidence below is historical. See [candidate verification](verification/v0.2.0.md).
+
 The public package is `writing-doc` version `0.1.0`.
 Repository: [joevilcai666/writing-doc-skill](https://github.com/joevilcai666/writing-doc-skill), default branch `main`.
 Annotated tag `v0.1.0` points to tested commit `9630868f9c0b491cfd28511fa88f551f4cd5f5d3`.

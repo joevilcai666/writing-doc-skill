@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.0 — Unreleased
+
+- Extend the reader-oriented workflow to research, explanations, decision memos, and product designs.
+- Preserve evidence, source disagreements, uncertainty, technical details, and review boundaries.
+- Add six synthetic reader-outcome cases; distinguish model-generated output evaluation from static checks and human comprehension.
+- Enforce a portable 64-level JSON nesting limit across Python decoder versions.
+- Release status and blockers: [verification](docs/verification/v0.2.0.md).
+
 ## v0.1.0 — 2026-10-15
 
 - One shared technical-document skill for Codex, Claude Code, and Agent Skills clients.

@@ -1,0 +1,434 @@
+[
+  {
+    "sample": "D01",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "开头将改善潜力、归因不明与核实成本合并为决策，保留全部事实并提出同库比较和净耗时验证。"
+  },
+  {
+    "sample": "D02",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "字段表与状态码完整可查，明确未给定的编码、认证与响应边界，没有补造契约。"
+  },
+  {
+    "sample": "D03",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "来源表同时解释决策含义，后文以同库对照、总耗时及质量门槛串联扩展判断。"
+  },
+  {
+    "sample": "D04",
+    "scores": [
+      3,
+      4,
+      4,
+      4,
+      3
+    ],
+    "hard_failure": false,
+    "rationale": "字段与状态正确，但“fictional Lantern API”擅自把未命名接口归入 Lantern，超出本题提供的事实。"
+  },
+  {
+    "sample": "D05",
+    "scores": [
+      4,
+      4,
+      3,
+      4,
+      3
+    ],
+    "hard_failure": false,
+    "rationale": "证据与验证方案稳妥，但“选择 B 的理由是”直接优先行动价值，没有明确说明若目标是低成本广覆盖应选 A，目标依赖的决策解释略弱。"
+  },
+  {
+    "sample": "D06",
+    "scores": [
+      4,
+      4,
+      4,
+      3,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "命令、前置条件、状态与生产警告齐全；“curl”与“curl -i”分列且末尾再说明未验证，表达可略压缩。"
+  },
+  {
+    "sample": "D07",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "完整保留字段约束与响应，用纯字段示例且明确编码未知，参考结构清楚。"
+  },
+  {
+    "sample": "D08",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "从效率信号进入混杂与核实成本，再落到同库比较和净收益门槛，证据和判断对应。"
+  },
+  {
+    "sample": "D09",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "必填性、类型、默认值、范围与状态齐全；JSON 明确仅示意字段值，未将其当作既定编码。"
+  },
+  {
+    "sample": "D10",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "按环境、安装、启动、另开终端验证展开，curl -i 可检查 HTTP 200，故障检查及警告完整。"
+  },
+  {
+    "sample": "D11",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色保留数据和不确定性；审阅仅给条件建议，并正确区分百分点与相对降幅。"
+  },
+  {
+    "sample": "D12",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色未增观点，审阅建议核实比较基准且明确不能推导注册增长造成转化下降。"
+  },
+  {
+    "sample": "D13",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "开头直接给受控试点结论，三来源支持同一净收益判断，下一轮问题和扩大条件可检验。"
+  },
+  {
+    "sample": "D14",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "Python 版本、根目录、安装启动顺序、状态验证和生产限制完整，未声称执行。"
+  },
+  {
+    "sample": "D15",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "明确以行动价值为本轮目标，承认覆盖和成本取舍，并给出行为、覆盖和困扰指标及后续决策条件。"
+  },
+  {
+    "sample": "D16",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色保留全部含义，审阅建议均待口径确认，并保持文件审阅边界。"
+  },
+  {
+    "sample": "D17",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "清楚说明目标不同会改变选择，先验证判断逻辑再验证行为，并覆盖误报、遗漏及失败后的方向调整。"
+  },
+  {
+    "sample": "D18",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "研究信号、混杂、核实成本和质量统一到下一轮三个问题，门槛留待约定，无虚构数值。"
+  },
+  {
+    "sample": "D19",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "本地启动所需条件、命令、验证与故障排查完整；处理端口占用前提示确认进程用途，表达具体。"
+  },
+  {
+    "sample": "D20",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "以周报偏好问题引入，从有限上下文解释存储和取回，再区分训练权重，示例明确为可能实现。"
+  },
+  {
+    "sample": "D21",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "两部分都保留数值及原因不确定性，审阅简明指出比较基期缺口且不擅自补写。"
+  },
+  {
+    "sample": "D22",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色不增观点，审阅建议核实计量对象、比较基准和原因指代，未把假设写成事实。"
+  },
+  {
+    "sample": "D23",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "工作笔记类比与三个环节清楚，有限窗口和权重区别直接解释，能够回答存下不等于用好的问题。"
+  },
+  {
+    "sample": "D24",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "契约字段与状态齐全；JSON 明确仅示意数据且位置、编码未指定，边界处理准确。"
+  },
+  {
+    "sample": "D25",
+    "scores": [
+      3,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "目标、取舍、风险和验证齐全，但“能让每条提示对应具体的用户需求”略强：触发条件本身尚不能保证真实需求匹配，宜写作待验证假设。"
+  },
+  {
+    "sample": "D26",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "保存、组织、任务相关取回与有限窗口关系明确，权重解释易懂，并点明过时和错误取回风险。"
+  },
+  {
+    "sample": "D27",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "保留所有操作要素，以 curl -i 显示状态便于首次使用者验证，生产警告及未执行限定明确。"
+  },
+  {
+    "sample": "D28",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "开头概括收益潜力与归因限制，后文把核实负担纳入总耗时，对照与质量验证完整。"
+  },
+  {
+    "sample": "D29",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "工作笔记类比、上下文说明与概念表相互衔接，明确存储不等于训练且记忆需保持相关有效。"
+  },
+  {
+    "sample": "D30",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "以客户方案场景起步，依次解释三环节、当前使用与长期保存、训练区别，段落连贯。"
+  },
+  {
+    "sample": "D31",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "推荐清楚限定于行动目标，明确覆盖目标可改选 A，并提供逻辑质量、行为和遗漏的验证方案。"
+  },
+  {
+    "sample": "D32",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色完整保留数值与不确定性，审阅聚焦比较基准和转化窗口，不把待核实口径直接补成事实。"
+  },
+  {
+    "sample": "D33",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "档案柜与桌面类比解释有限窗口及取回机制，正确区分权重更新，并说明保存不能保证当前使用。"
+  },
+  {
+    "sample": "D34",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "步骤简洁且覆盖版本、目录、命令、健康状态与警告，故障排查先看进程和端口。"
+  },
+  {
+    "sample": "D35",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "把 B 明确视为待验证价值判断，同时比较每次提示价值与总体覆盖收益，并纳入成本和遗漏风险。"
+  },
+  {
+    "sample": "D36",
+    "scores": [
+      2,
+      4,
+      3,
+      4,
+      3
+    ],
+    "hard_failure": true,
+    "rationale": "“Content-Type: application/json”和“Request body”把未提供的编码与字段位置写成既定 API 契约；还将 JSON 缺 name 示例断言为返回 400，依赖该虚构请求格式。字段约束与状态码本身正确。"
+  }
+]

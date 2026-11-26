@@ -7,7 +7,9 @@ The skill is an editor's desk: it keeps the source facts but rearranges them so 
 To create and maintain a living product explanation like this document for another project, use the [how-it-works skill](https://github.com/joevilcai666/how-it-works-skill).
 
 The package contains instructions for the user's agent, not a separate document service.
-This repository defines the package identity for release `0.1.0`.
+This working tree defines the package identity for candidate `0.2.0`; v0.1.0 remains the published release.
+
+The candidate chooses an understanding path for research, concepts, decisions, product designs, operations, and API lookup. It synthesizes sources by topic, distinguishes evidence from inference, and edits for accurate understanding before sentence brevity. Read the [current verification](docs/verification/v0.2.0.md) for release blockers. Historical v0.1.0 evidence below does not verify this candidate.
 The package uses the MIT license.
 Its configured repository URL is `https://github.com/joevilcai666/writing-doc-skill`.
 The repository and [v0.1.0 Release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) are public.
@@ -149,7 +151,7 @@ The unit gate rejects an empty test suite.
 
 ```mermaid
 flowchart TD
-    A["Current files, hidden files, and Git index"] --> B["Default repository checks"]
+    A["Current files, hidden files, and Git index"] --> B["Candidate structure and compatibility checks"]
     C["Reachable Git blobs, commit messages, and annotated tag messages"] --> D["Release history checks"]
     B --> E["Structure, links, rubric, tests, strict text parsing, privacy, and whitespace"]
     D --> F["Strict text parsing, metadata, private-value, and message-format checks"]
@@ -298,4 +300,4 @@ Later evidence changes on `main` do not rebuild or replace that asset.
 The [tagged release note](docs/releases/v0.1.0.md) describes the candidate snapshot.
 The [verification record](docs/verification/v0.1.0.md) reports the final publication checks.
 
-最后更新时间：2026-10-16（Asia/Shanghai）
+最后更新时间：2026-11-26（Asia/Shanghai）

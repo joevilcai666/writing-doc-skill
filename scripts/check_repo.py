@@ -72,8 +72,19 @@ def _json_pairs(pairs):
 
 
 def _load_json(path):
-    return json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=_json_pairs,
+    value = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=_json_pairs,
                       parse_constant=lambda _: (_ for _ in ()).throw(ValueError("invalid constant")))
+    # Python decoders differ in their recursion limit. Bound nesting explicitly.
+    pending = [(value, 0)]
+    while pending:
+        item, depth = pending.pop()
+        if depth > 64:
+            raise ValueError("JSON nesting exceeds 64 levels")
+        if isinstance(item, dict):
+            pending.extend((child, depth + 1) for child in item.values())
+        elif isinstance(item, list):
+            pending.extend((child, depth + 1) for child in item)
+    return value
 
 
 def _frontmatter(text):

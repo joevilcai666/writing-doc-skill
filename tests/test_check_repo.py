@@ -138,6 +138,15 @@ class RepositoryCheckTests(unittest.TestCase):
         (self.root / "deep.json").write_text("[" * 2000 + "0" + "]" * 2000)
         self.assertTrue(check_structure(self.root))
 
+    def test_json_depth_limit_and_brackets_in_strings(self):
+        path = self.root / "nested.json"
+        path.write_text("[" * 64 + "0" + "]" * 64)
+        self.assertEqual(check_structure(self.root), [])
+        path.write_text("[" * 65 + "0" + "]" * 65)
+        self.assertIn("invalid-json: nested.json", check_structure(self.root))
+        path.write_text('"' + "[" * 2000 + '"')
+        self.assertEqual(check_structure(self.root), [])
+
     def test_reference_images_satisfy_readme_image_requirement(self):
         (self.root / "README.md").write_text(
             "![Problem][problem]\n![Solution][solution]\n\n"

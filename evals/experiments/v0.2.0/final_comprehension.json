@@ -1,0 +1,314 @@
+[
+  {
+    "sample": "F01",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": "name: required string, default unspecified. limit: optional integer, default 10, inclusive range 1–100.",
+      "statuses": "Success: 201. Missing name: 400.",
+      "api_product_name": "unspecified",
+      "request_encoding": "unspecified; field location also unspecified"
+    }
+  },
+  {
+    "sample": "F02",
+    "answers": {
+      "python_version": "3.11",
+      "working_directory": "repository root",
+      "install": "pip install -r requirements.txt",
+      "start": "python -m lantern serve --port 4310",
+      "health": "curl http://localhost:4310/health; curl -i http://localhost:4310/health shows status and headers",
+      "status": "Expected HTTP 200; actual execution not verified.",
+      "failure_checks": "Check service process and terminal errors, verify service and health request both use port 4310, identify and free an occupied port, then restart.",
+      "deployment_warning": "Do not expose this development service in production."
+    }
+  },
+  {
+    "sample": "F03",
+    "answers": {
+      "why_memory_can_fail": "Stored information must be retrieved into the current task context; limited context prevents keeping all history available. Retrieved information must be relevant and still valid; outdated or unrelated memories can interfere.",
+      "does_storage_retrain_weights": "No. Long-term storage, current context, and training-time weight updates are distinct."
+    }
+  },
+  {
+    "sample": "F04",
+    "answers": {
+      "python_version": "3.11",
+      "working_directory": "repository root",
+      "install": "pip install -r requirements.txt",
+      "start": "python -m lantern serve --port 4310",
+      "health": "curl http://localhost:4310/health; curl -i http://localhost:4310/health shows status and headers",
+      "status": "Expected HTTP 200; actual execution status unspecified.",
+      "failure_checks": "Check service process and terminal errors; fix errors and restart if exited. Confirm service port 4310 matches the health request.",
+      "deployment_warning": "Do not expose this development service in production."
+    }
+  },
+  {
+    "sample": "F05",
+    "answers": {
+      "numeric_facts": "This quarter new registrations grew 15%; paid conversion fell from 4% to 3%. Comparison basis, population and measurement windows unspecified.",
+      "cause_known": "No; cause cannot yet be confirmed.",
+      "review_edited_files_claim": "No claim that review edited files. It explicitly says these are review comments and the original text was not rewritten."
+    }
+  },
+  {
+    "sample": "F06",
+    "answers": {
+      "numeric_facts": "This quarter new registrations grew 15%; paid conversion fell from 4% to 3%. Metric and comparison basis unspecified.",
+      "cause_known": "No; cause cannot yet be confirmed.",
+      "review_edited_files_claim": "No file-edit claim; file modification status unspecified."
+    }
+  },
+  {
+    "sample": "F07",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": "name: required string, default unspecified. limit: optional integer, default 10, inclusive range 1–100.",
+      "statuses": "Success: 201. Missing name: 400.",
+      "api_product_name": "unspecified",
+      "request_encoding": "unspecified; field location also unspecified"
+    }
+  },
+  {
+    "sample": "F08",
+    "answers": {
+      "why_memory_can_fail": "Saved information is not necessarily retrieved into the finite current context. A saved preference may not affect an answer if not retrieved; inaccurate, outdated or wrongly retrieved information can harm results.",
+      "does_storage_retrain_weights": "No. Memory changes available reference material rather than equaling a model weight update."
+    }
+  },
+  {
+    "sample": "F09",
+    "answers": {
+      "tradeoff": "A provides a daily fixed summary to everyone, broader coverage and lower cost. B alerts only on evidence-backed actionable changes, with lower expected coverage and extra decision logic/cost, seeking useful understanding and action. Neither has behavior validation.",
+      "validation": "Define a limited set of change types and trigger rules; compare B with A on reach, comprehension, related action and frequency feedback. Check missed changes and unsupported alerts; opens alone are insufficient. Continue if understanding/action gains justify reduced coverage and acceptable implementation and maintenance costs."
+    }
+  },
+  {
+    "sample": "F10",
+    "answers": {
+      "does_faster_lookup_prove_ai_causation": "No. The knowledge base was also cleaned during the pilot, so the contributions cannot be separated. The reported lookup time may exclude manual verification.",
+      "next_trial_measure": "Use AI and control groups with the same document-cleaning state. Measure total time from question to usable answer, correctness, source traceability and manual verification burden; agree quality and time-benefit thresholds beforehand."
+    }
+  },
+  {
+    "sample": "F11",
+    "answers": {
+      "numeric_facts": "This quarter new registrations grew 15%; paid conversion fell from 4% to 3%. Growth comparison basis and conversion comparison periods unspecified.",
+      "cause_known": "No; cause cannot yet be confirmed.",
+      "review_edited_files_claim": "No file-edit claim; file modification status unspecified."
+    }
+  },
+  {
+    "sample": "F12",
+    "answers": {
+      "does_faster_lookup_prove_ai_causation": "No. A short single-group before/after comparison cannot establish causation, and simultaneous knowledge-base cleanup could explain improvement. Inclusion of verification time is unspecified.",
+      "next_trial_measure": "Compare AI and existing search on the same cleaned knowledge base with comparable tasks, randomized groups if possible. Record total time through verification and verification time separately; check answer accuracy, source coverage/support and rework. Predefine total-time and quality acceptance standards."
+    }
+  },
+  {
+    "sample": "F13",
+    "answers": {
+      "does_faster_lookup_prove_ai_causation": "No. Concurrent cleanup may also improve search, and the evidence cannot separate contributions. Lookup time may omit answer verification, so four minutes is not established net task savings.",
+      "next_trial_measure": "Compare original and AI search on the same cleaned knowledge base, matching task difficulty and participant backgrounds. Time through verified answers and record correctness, source traceability and manual verification; predefine efficiency and quality thresholds."
+    }
+  },
+  {
+    "sample": "F14",
+    "answers": {
+      "python_version": "3.11",
+      "working_directory": "repository root",
+      "install": "pip install -r requirements.txt",
+      "start": "python -m lantern serve --port 4310",
+      "health": "curl -i http://localhost:4310/health",
+      "status": "Expected HTTP 200; actual execution status unspecified.",
+      "failure_checks": "Confirm process still runs, inspect startup errors, check service port 4310 and matching request port, and check whether another process occupies the port. Fix errors, restart and repeat health check.",
+      "deployment_warning": "Do not expose this development service in production."
+    }
+  },
+  {
+    "sample": "F15",
+    "answers": {
+      "python_version": "3.11",
+      "working_directory": "repository root",
+      "install": "pip install -r requirements.txt",
+      "start": "python -m lantern serve --port 4310",
+      "health": "curl -i http://localhost:4310/health",
+      "status": "Expected HTTP 200; not run or verified in an actual project.",
+      "failure_checks": "Check running process and startup errors, confirm service port 4310 and whether occupied by another process; resolve problems and repeat health check.",
+      "deployment_warning": "Do not expose this development service in production."
+    }
+  },
+  {
+    "sample": "F16",
+    "answers": {
+      "numeric_facts": "This quarter new registrations grew 15%; paid conversion fell from 4% to 3%, a difference of 1 percentage point. Metric and growth comparison basis unspecified.",
+      "cause_known": "No; cause cannot yet be confirmed.",
+      "review_edited_files_claim": "Explicitly says these are review comments only and no files were modified."
+    }
+  },
+  {
+    "sample": "F17",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": "name: required string, default unspecified. limit: optional integer, default 10, inclusive range 1–100.",
+      "statuses": "Success: 201 Created. Missing name: 400 Bad Request.",
+      "api_product_name": "unspecified; described as fictional",
+      "request_encoding": "Claims a JSON request body, with Content-Type: application/json in the HTTP example."
+    }
+  },
+  {
+    "sample": "F18",
+    "answers": {
+      "why_memory_can_fail": "Finite context requires selection and retrieval from storage. Unretrieved saved information may not be used; outdated or unrelated retrieved information may lead the answer away from current needs. More stored history does not automatically improve accuracy.",
+      "does_storage_retrain_weights": "No. Saving records changes task reference material and does not itself retrain the model or update weights."
+    }
+  },
+  {
+    "sample": "F19",
+    "answers": {
+      "does_faster_lookup_prove_ai_causation": "No. Knowledge-base cleanup happened at the same time, and there is no control separating it from AI. The short, limited pilot also does not specify whether verification time is included.",
+      "next_trial_measure": "Compare comparable users on the same cleaned knowledge base using AI or existing search. Measure total time through completed verification, correctness, source traceability and task completion; predefine acceptable time, quality and verification-cost standards."
+    }
+  },
+  {
+    "sample": "F20",
+    "answers": {
+      "python_version": "3.11",
+      "working_directory": "repository root",
+      "install": "pip install -r requirements.txt",
+      "start": "python -m lantern serve --port 4310",
+      "health": "curl -i http://localhost:4310/health",
+      "status": "Expected HTTP 200; not run or verified in an actual project.",
+      "failure_checks": "Check service process and startup terminal errors; confirm service port 4310 is not occupied by another process. Resolve process/port issues, restart and request /health again.",
+      "deployment_warning": "Do not expose this development service in production."
+    }
+  },
+  {
+    "sample": "F21",
+    "answers": {
+      "does_faster_lookup_prove_ai_causation": "No. Concurrent cleanup confounds attribution, and the evidence does not confirm improved total time after answer verification.",
+      "next_trial_measure": "Use the same knowledge-base version and comparable tasks for AI and control groups; randomize if possible. Record total question-to-verification time, lookup and verification separately, accuracy, source usability and task completion. Set efficiency/quality thresholds before expanding."
+    }
+  },
+  {
+    "sample": "F22",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": "name: required string, default unspecified. limit: optional integer, default 10, inclusive range 1–100.",
+      "statuses": "Success: 201 Created. Missing name: 400 Bad Request.",
+      "api_product_name": "unspecified; described as fictional",
+      "request_encoding": "unspecified; JSON example illustrates field values only"
+    }
+  },
+  {
+    "sample": "F23",
+    "answers": {
+      "numeric_facts": "This quarter new registrations grew 15%; paid conversion fell from 4% to 3%, a decline of 1 percentage point or 25% relative. Comparison basis unspecified.",
+      "cause_known": "No; cause cannot yet be confirmed.",
+      "review_edited_files_claim": "No file-edit claim; file modification status unspecified."
+    }
+  },
+  {
+    "sample": "F24",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": "name: required string, default unspecified, no further constraints specified. limit: optional integer, default 10, inclusive range 1–100.",
+      "statuses": "Success: 201 Created. Missing name: 400 Bad Request.",
+      "api_product_name": "unspecified; endpoint described as fictional",
+      "request_encoding": "unspecified, as is field location; JSON illustrates fields only"
+    }
+  },
+  {
+    "sample": "F25",
+    "answers": {
+      "why_memory_can_fail": "The context window cannot contain all saved history; relevant information must be accurately retrieved for the current task. Storage alone without accurate retrieval may not help. Other failure modes unspecified.",
+      "does_storage_retrain_weights": "No. A saved decision does not change internal weights; retrieved context can change an answer while weights remain unchanged."
+    }
+  },
+  {
+    "sample": "F26",
+    "answers": {
+      "does_faster_lookup_prove_ai_causation": "No. Simultaneous document cleanup may also affect lookup time and no control separates the contributions. Verification time may be excluded, and short-pilot gains may not persist at larger scale.",
+      "next_trial_measure": "Compare AI versus no AI on the same cleaned knowledge base with comparable tasks. Record total question-to-usable-verified-answer time, correctness, whether sources support answers and extra verification. Agree time/quality acceptance standards before expansion."
+    }
+  },
+  {
+    "sample": "F27",
+    "answers": {
+      "python_version": "3.11",
+      "working_directory": "Lantern repository root",
+      "install": "pip install -r requirements.txt",
+      "start": "python -m lantern serve --port 4310",
+      "health": "curl -i http://localhost:4310/health",
+      "status": "Expected HTTP 200; commands not actually run or verified.",
+      "failure_checks": "Check service process and startup errors; confirm service uses port 4310 and no other process occupies it. Resolve process/port issues, restart and rerun health check.",
+      "deployment_warning": "Only for local development; do not expose in production."
+    }
+  },
+  {
+    "sample": "F28",
+    "answers": {
+      "tradeoff": "A gives all users a daily fixed summary with broader reach and lower implementation cost. B sends evidence-backed actionable change alerts, with expected lower reach and extra logic, to test useful action. User value for either is unverified.",
+      "validation": "Limit change types, define evidence and actions, run a limited trial with A as control if possible. Track reach, reading, subsequent action and feedback, including benefit across all participants. Predefine acceptance standards and continue only for justified alerts users understand and act on, with benefits supporting extra costs."
+    }
+  },
+  {
+    "sample": "F29",
+    "answers": {
+      "why_memory_can_fail": "Saved information may remain outside the limited current context. It has to be correctly retrieved at the right time and be suitable for the current task to help. Other failure modes unspecified.",
+      "does_storage_retrain_weights": "No. Writing information to Memory does not update training-formed internal weights; relevant information still must be supplied for the current task."
+    }
+  },
+  {
+    "sample": "F30",
+    "answers": {
+      "tradeoff": "A reaches everyone daily at low cost. B triggers on evidence-backed actionable changes, with expected lower reach and extra logic, allowing a direct test of useful action. User value is unverified for either.",
+      "validation": "Define evidence/action rules, run a small trial, track qualifying-user proportion including untriggered users in coverage, views, action and perceived helpfulness. Compare A when possible; pre-agree value, coverage and cost standards. Expand only if value, coverage and cost are acceptable."
+    }
+  },
+  {
+    "sample": "F31",
+    "answers": {
+      "tradeoff": "A has broader coverage and lower cost through daily fixed summaries. B accepts expected lower coverage and extra logic/cost to test whether evidence-backed actionable change triggers help users. No behavior evidence establishes superiority.",
+      "validation": "Limit to one change type with evidence/action trigger rules, then test comprehension, usefulness, action, disturbance and qualifying-user proportion. Compare A if possible; set value, coverage and implementation-cost thresholds and expand only if benefits and costs justify it."
+    }
+  },
+  {
+    "sample": "F32",
+    "answers": {
+      "numeric_facts": "This quarter new registrations grew 15%; paid conversion fell from 4% to 3%, a decline of 1 percentage point. Registration metric and comparison basis unspecified.",
+      "cause_known": "No; cause cannot yet be confirmed.",
+      "review_edited_files_claim": "Explicitly says review comments only and no files were modified."
+    }
+  },
+  {
+    "sample": "F33",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": "name: required string, default unspecified. limit: optional integer, default 10, inclusive range 1–100.",
+      "statuses": "Success: 201. Missing name: 400.",
+      "api_product_name": "unspecified",
+      "request_encoding": "unspecified; field location also unspecified"
+    }
+  },
+  {
+    "sample": "F34",
+    "answers": {
+      "tradeoff": "A has broader reach and low cost from daily summaries to everyone. B targets evidence-backed actionable changes with expected lower reach and higher implementation cost, pursuing useful action. Neither user value nor action is validated.",
+      "validation": "Limit recognizable change types and specify evidence and actions; run small trials, check evidence, comprehension, useful action and missed changes. Compare A in comparable users on actual value. Predefine accuracy, value and cost standards; narrow scope or reevaluate if identification is unreliable or costs excessive."
+    }
+  },
+  {
+    "sample": "F35",
+    "answers": {
+      "why_memory_can_fail": "Storage does not guarantee information is visible in the finite current context. Appropriate information must be organized and retrieved for the task; outdated or unrelated information must be handled.",
+      "does_storage_retrain_weights": "No. Storing preferences or history does not modify training-formed model parameters; supplemental current-context material can affect answers without weight updates."
+    }
+  },
+  {
+    "sample": "F36",
+    "answers": {
+      "tradeoff": "A reaches more users through daily fixed summaries at low implementation cost. B alerts on evidence-backed actionable changes with expected lower coverage and extra logic/investment, prioritizing useful action. No user behavior evidence proves B better.",
+      "validation": "Define triggers for limited change types and provide change, evidence and action explanations; suppress unsupported alerts. Compare A/B in comparable users on reading, helpfulness, action, disabling and disturbance feedback. Check justified triggers and missed changes. Predefine period, behavior measures and thresholds; expand only for better action/helpfulness at acceptable logic cost."
+    }
+  }
+]

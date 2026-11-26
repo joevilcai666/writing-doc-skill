@@ -1,0 +1,434 @@
+[
+  {
+    "sample": "F01",
+    "scores": [
+      4,
+      4,
+      4,
+      3,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "合同字段和状态码完整，未假定编码或认证；未定义细节列举较长，末段重复编码与字段位置。"
+  },
+  {
+    "sample": "F02",
+    "scores": [
+      4,
+      4,
+      4,
+      3,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "版本、目录、命令、200、排错与生产警告完整；正文约定和未运行声明略增篇幅。"
+  },
+  {
+    "sample": "F03",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "工作笔记例子连接保存与取回，清楚区分上下文、存储和权重，并解释过时或无关记忆的限制。"
+  },
+  {
+    "sample": "F04",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "完整保留启动与原始健康检查命令，额外的 -i 便于验证状态码，前置条件、排错及生产警告清楚。"
+  },
+  {
+    "sample": "F05",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色保留数字及原因未明；审阅仅提出需据实核对的指标、时段和指代问题。"
+  },
+  {
+    "sample": "F06",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色未增加解释；审阅明确比较基准与原因指向，补充均以真实口径为条件。"
+  },
+  {
+    "sample": "F07",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "英文参考便于查找，完整保留类型、默认值、范围与状态码，明确未定义的协议细节。"
+  },
+  {
+    "sample": "F08",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "从延续工作解释有限上下文、按需取回与权重区别，并说明取回缺失及信息过时为何影响结果。"
+  },
+  {
+    "sample": "F09",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "推荐明确以行动价值为取舍且待验证，比较覆盖和成本，提供理解、行动及漏报等验证指标。"
+  },
+  {
+    "sample": "F10",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "开头明确有潜力但不可归因，将净耗时、核实成本与同期清理连为决策，并提出同知识库对照。"
+  },
+  {
+    "sample": "F11",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色忠实，审阅建议核对增长基准和转化比较期间，不自行补数据或原因。"
+  },
+  {
+    "sample": "F12",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "来源表给出决策含义，后续整合归因、净节省及出处验证；不捏造比例或阈值。"
+  },
+  {
+    "sample": "F13",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "明确改善尚不能归因，核实时间未明；对照和完整任务计时直接支持是否扩大的判断。"
+  },
+  {
+    "sample": "F14",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "hard_failure": false,
+    "rationale": "版本、目录、启动顺序、200、排错和警告齐全；原始 curl 命令只提供加 -i 的变体，未逐字保留。"
+  },
+  {
+    "sample": "F15",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "hard_failure": false,
+    "rationale": "步骤和关键约束完整且未声称执行；健康检查以 curl -i 替代原命令，未满足逐条保留命令的字面要求。"
+  },
+  {
+    "sample": "F16",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "保留全部数字和不确定性；审阅对指标、比较基准及原因指代提出条件建议，百分点解释正确。"
+  },
+  {
+    "sample": "F17",
+    "scores": [
+      1,
+      4,
+      4,
+      3,
+      2
+    ],
+    "hard_failure": true,
+    "rationale": "将字段位置断定为 request body，并给出 application/json HTTP 请求；合同未规定字段位置或编码，构成捏造 API 约定。"
+  },
+  {
+    "sample": "F18",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "项目例子逐步解释保存、检索、当前上下文与生成的关系，区分重新训练，并说明错误记忆的影响。"
+  },
+  {
+    "sample": "F19",
+    "scores": [
+      4,
+      3,
+      3,
+      3,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "事实和归因限制准确，验证方案可用；主体逐段按 A/B/C 摘要，速度、核实成本和混杂因素整合较迟。"
+  },
+  {
+    "sample": "F20",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "hard_failure": false,
+    "rationale": "前置条件、依赖、启动、200、排错及警告齐全；原始 curl 检查命令仅以 -i 变体出现。"
+  },
+  {
+    "sample": "F21",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "开头并列归因与净耗时不明，表格关联决策含义，并用同知识库对照和质量门槛指导扩大。"
+  },
+  {
+    "sample": "F22",
+    "scores": [
+      2,
+      4,
+      4,
+      4,
+      3
+    ],
+    "hard_failure": true,
+    "rationale": "直接断言端点 Creates an item；输入仅给路径、字段和状态码，未定义业务效果。JSON 明确仅示意字段值，不算编码假定。"
+  },
+  {
+    "sample": "F23",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "润色保留原意；审阅的用户数和比较基准均为条件建议，百分点与相对降幅计算准确。"
+  },
+  {
+    "sample": "F24",
+    "scores": [
+      2,
+      4,
+      4,
+      4,
+      3
+    ],
+    "hard_failure": true,
+    "rationale": "将业务效果写成 Creates an item，超出给定合同；其余字段完整，JSON 已明示仅为字段示例而非编码约定。"
+  },
+  {
+    "sample": "F25",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "从延续发布计划的实际需求展开，解释有限上下文、组织取回和权重区别，说明保存不保证使用。"
+  },
+  {
+    "sample": "F26",
+    "scores": [
+      4,
+      4,
+      3,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "证据及验证建议准确；标题把两个问题称为效率改善的解释，但核实成本属于净收益测量限制，并非查找变快的另一解释。"
+  },
+  {
+    "sample": "F27",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "hard_failure": false,
+    "rationale": "环境、启动顺序、200、进程端口排查及警告完整；只给 curl -i，未逐字保留输入中的原始健康检查命令。"
+  },
+  {
+    "sample": "F28",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "以行动目标明确推荐是假设，覆盖和成本比较充分；特别要求同时观察全体受益比例，避免只看已触达人群。"
+  },
+  {
+    "sample": "F29",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "保存、组织、取回三步清晰，解释上下文容量和训练权重，例子未承诺普遍自动保存能力。"
+  },
+  {
+    "sample": "F30",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "B 为待验证方向，清晰列出覆盖与成本取舍，并给出行动、帮助感、全体覆盖率和有条件比较。"
+  },
+  {
+    "sample": "F31",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "明确假定目标并将推荐限定为验证，方案取舍和用户理解、行动、困扰及覆盖的指标齐全。"
+  },
+  {
+    "sample": "F32",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "忠实润色并保持审阅边界；比较周期与指标对象均待实际确认，百分点建议准确。"
+  },
+  {
+    "sample": "F33",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "英文参考字段、约束与响应完整，明确编码、字段位置及其他未定义细节，未补造请求协议。"
+  },
+  {
+    "sample": "F34",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "说明目标决定选择，以待验证行动价值推荐 B，保留覆盖和实现代价，提出依据、行动及漏报验证。"
+  },
+  {
+    "sample": "F35",
+    "scores": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "桌面与档案柜比喻解释上下文和存储，权重区别清晰，并说明过时或不相关信息需要处理。"
+  },
+  {
+    "sample": "F36",
+    "scores": [
+      3,
+      4,
+      4,
+      4,
+      4
+    ],
+    "hard_failure": false,
+    "rationale": "验证计划和取舍完整；开头称 B 能让每条提示对应具体用户需求略强于证据，后文明确是产品判断且尚无行为验证。"
+  }
+]

@@ -1,0 +1,12 @@
+PASS structure
+PASS release-files
+PASS markdown-links
+PASS rubric
+PASS unit-tests
+PASS privacy-current-index-history
+PASS git-diff
+PASS git-index-diff
+PASS skill-validator
+PASS codex-validator
+PASS claude-validator
+PASS repository

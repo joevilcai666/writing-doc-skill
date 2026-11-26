@@ -1,0 +1,404 @@
+[
+  {
+    "sample": "D01",
+    "answers": {
+      "causation": "No. Lookup time fell from 12 to 8 minutes in a 40-person, two-week pilot, but obsolete knowledge-base documents were cleaned up at the same time, so the contributions cannot be separated. It is unclear whether lookup time includes verification.",
+      "next_trial": "Compare AI and non-AI search using the same cleaned knowledge base. Measure total task time through answer verification, answer correctness, and whether accessible, traceable sources support the answer; assess manual verification burden. Set efficiency and quality acceptance criteria before expansion."
+    }
+  },
+  {
+    "sample": "D02",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "default": "not specified",
+          "range": "not specified"
+        },
+        "limit": {
+          "type": "integer",
+          "required": false,
+          "default": 10,
+          "range": "1–100 inclusive"
+        }
+      },
+      "success_code": 201,
+      "missing_name_code": 400,
+      "claimed_api_product_name": "not specified",
+      "request_encoding": "not specified"
+    }
+  },
+  {
+    "sample": "D03",
+    "answers": {
+      "causation": "No. Lookup time fell from 12 to 8 minutes in a 40-person, two-week pilot, but obsolete knowledge-base documents were cleaned up at the same time, so the contributions cannot be separated. It is unclear whether lookup time includes verification.",
+      "next_trial": "Compare AI and non-AI search using the same cleaned knowledge base. Measure total task time through answer verification, answer correctness, and whether accessible, traceable sources support the answer; assess manual verification burden. Set efficiency and quality acceptance criteria before expansion. Use comparable tasks, randomizing groups if feasible; record lookup and verification time separately and task completion."
+    }
+  },
+  {
+    "sample": "D04",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "default": "not specified",
+          "range": "not specified"
+        },
+        "limit": {
+          "type": "integer",
+          "required": false,
+          "default": 10,
+          "range": "1–100 inclusive"
+        }
+      },
+      "success_code": 201,
+      "missing_name_code": 400,
+      "claimed_api_product_name": "Lantern API (fictional)",
+      "request_encoding": "not specified"
+    }
+  },
+  {
+    "sample": "D05",
+    "answers": {
+      "tradeoff": "A sends a fixed daily health summary to all users, with broader coverage and lower implementation cost. B alerts only on evidence-backed, actionable changes, with expected lower coverage and additional judgment logic. B’s user value is unverified; fewer alerts alone do not prove superiority.",
+      "choice_evidence": "In a small trial, measure eligible-user coverage, viewing, action taken, and perceived helpfulness; include users receiving no alert. Compare with A if feasible. Decide against pre-agreed user-value, coverage, and implementation-cost standards."
+    }
+  },
+  {
+    "sample": "D06",
+    "answers": {
+      "python_version": "Python 3.11",
+      "working_directory": "Repository root",
+      "installation_command": "pip install -r requirements.txt",
+      "start_command": "python -m lantern serve --port 4310",
+      "health_command": "curl http://localhost:4310/health; curl -i http://localhost:4310/health to display the HTTP status",
+      "success_status": "HTTP 200",
+      "failure_checks": "Check the service terminal for a live process and errors after exit; confirm the service and health URL both use 4310. If an error says the port is occupied, identify the occupying process and free the port before restarting.",
+      "deployment_warning": "Do not expose this development service in production.",
+      "execution_claim": "Commands have not been run in the actual project."
+    }
+  },
+  {
+    "sample": "D07",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "default": "not specified",
+          "range": "not specified"
+        },
+        "limit": {
+          "type": "integer",
+          "required": false,
+          "default": 10,
+          "range": "1–100 inclusive"
+        }
+      },
+      "success_code": 201,
+      "missing_name_code": 400,
+      "claimed_api_product_name": "not specified",
+      "request_encoding": "not specified"
+    }
+  },
+  {
+    "sample": "D08",
+    "answers": {
+      "causation": "No. Lookup time fell from 12 to 8 minutes in a 40-person, two-week pilot, but obsolete knowledge-base documents were cleaned up at the same time, so the contributions cannot be separated. It is unclear whether lookup time includes verification.",
+      "next_trial": "Compare AI and non-AI search using the same cleaned knowledge base. Measure total task time through answer verification, answer correctness, and whether accessible, traceable sources support the answer; assess manual verification burden. Set efficiency and quality acceptance criteria before expansion."
+    }
+  },
+  {
+    "sample": "D09",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "default": "not specified",
+          "range": "not specified"
+        },
+        "limit": {
+          "type": "integer",
+          "required": false,
+          "default": 10,
+          "range": "1–100 inclusive"
+        }
+      },
+      "success_code": 201,
+      "missing_name_code": 400,
+      "claimed_api_product_name": "not specified",
+      "request_encoding": "not specified"
+    }
+  },
+  {
+    "sample": "D10",
+    "answers": {
+      "python_version": "Python 3.11",
+      "working_directory": "Repository root",
+      "installation_command": "pip install -r requirements.txt",
+      "start_command": "python -m lantern serve --port 4310",
+      "health_command": "curl -i http://localhost:4310/health",
+      "success_status": "HTTP 200",
+      "failure_checks": "Check the startup terminal for a running process and startup errors; confirm port 4310 is used and not occupied by another process. Resolve issues, restart, and repeat health check.",
+      "deployment_warning": "Do not expose this development service in production.",
+      "execution_claim": "Commands have not been run in the actual project."
+    }
+  },
+  {
+    "sample": "D11",
+    "answers": {
+      "numeric_facts": "This quarter, new registrations grew 15%; paid conversion fell from 4% to 3%. The comparison baseline for 15% is not specified. The review distinguishes a 1-percentage-point decline from a 25% relative decline.",
+      "cause_known": "No; the cause cannot yet be confirmed.",
+      "review_claims_file_edits": "No claim of editing files."
+    }
+  },
+  {
+    "sample": "D12",
+    "answers": {
+      "numeric_facts": "This quarter, new registrations grew 15%; paid conversion fell from 4% to 3%. The comparison baseline for 15% is not specified.",
+      "cause_known": "No; the cause cannot yet be confirmed.",
+      "review_claims_file_edits": "No claim of editing files."
+    }
+  },
+  {
+    "sample": "D13",
+    "answers": {
+      "causation": "No. Lookup time fell from 12 to 8 minutes in a 40-person, two-week pilot, but obsolete knowledge-base documents were cleaned up at the same time, so the contributions cannot be separated. It is unclear whether lookup time includes verification.",
+      "next_trial": "Compare AI and non-AI search using the same cleaned knowledge base. Measure total task time through answer verification, answer correctness, and whether accessible, traceable sources support the answer; assess manual verification burden. Set efficiency and quality acceptance criteria before expansion. Match task difficulty and participant backgrounds where possible."
+    }
+  },
+  {
+    "sample": "D14",
+    "answers": {
+      "python_version": "Python 3.11",
+      "working_directory": "Repository root",
+      "installation_command": "pip install -r requirements.txt",
+      "start_command": "python -m lantern serve --port 4310",
+      "health_command": "curl -i http://localhost:4310/health",
+      "success_status": "HTTP 200",
+      "failure_checks": "Check the startup terminal for a live process and errors; check whether another process occupies 4310 or the service failed to listen there. Resolve, restart, and repeat health check.",
+      "deployment_warning": "Do not expose this development service in production.",
+      "execution_claim": "Commands have not been run in the actual project."
+    }
+  },
+  {
+    "sample": "D15",
+    "answers": {
+      "tradeoff": "A sends a fixed daily health summary to all users, with broader coverage and lower implementation cost. B alerts only on evidence-backed, actionable changes, with expected lower coverage and additional judgment logic. B’s user value is unverified; fewer alerts alone do not prove superiority.",
+      "choice_evidence": "Measure comprehension, usefulness, actions, annoyance, and the proportion eligible for alerts, comparing with A if possible. Pre-agree user-value, coverage, and implementation/maintenance cost thresholds; expand B only if benefits and acceptable coverage/cost are observed."
+    }
+  },
+  {
+    "sample": "D16",
+    "answers": {
+      "numeric_facts": "This quarter, new registrations grew 15%; paid conversion fell from 4% to 3%. The comparison baseline for 15% is not specified. The review says this is a 1-percentage-point decline.",
+      "cause_known": "No; the cause cannot yet be confirmed.",
+      "review_claims_file_edits": "No; the review explicitly states that it has not modified files."
+    }
+  },
+  {
+    "sample": "D17",
+    "answers": {
+      "tradeoff": "A sends a fixed daily health summary to all users, with broader coverage and lower implementation cost. B alerts only on evidence-backed, actionable changes, with expected lower coverage and additional judgment logic. B’s user value is unverified; fewer alerts alone do not prove superiority.",
+      "choice_evidence": "First test evidence sufficiency and the reliability of B’s judgment logic, including missed valuable changes. Then compare behavior with A: understanding available actions, actual actions, and practical help. Predefine standards; clicks alone do not establish action value. Reconsider A if B is unreliable or lacks benefit."
+    }
+  },
+  {
+    "sample": "D18",
+    "answers": {
+      "causation": "No. Lookup time fell from 12 to 8 minutes in a 40-person, two-week pilot, but obsolete knowledge-base documents were cleaned up at the same time, so the contributions cannot be separated. It is unclear whether lookup time includes verification.",
+      "next_trial": "Compare AI and non-AI search using the same cleaned knowledge base. Measure total task time through answer verification, answer correctness, and whether accessible, traceable sources support the answer; assess manual verification burden. Set efficiency and quality acceptance criteria before expansion. Use comparable tasks and randomize if feasible. Record verification time separately, source coverage, and rework due to missing sources."
+    }
+  },
+  {
+    "sample": "D19",
+    "answers": {
+      "python_version": "Python 3.11",
+      "working_directory": "Repository root",
+      "installation_command": "pip install -r requirements.txt",
+      "start_command": "python -m lantern serve --port 4310",
+      "health_command": "curl -i http://localhost:4310/health",
+      "success_status": "HTTP 200",
+      "failure_checks": "Check the startup terminal for a running process, correct port 4310, and port conflicts. If occupied, identify the occupying process’s purpose, free the port, restart, and repeat health check.",
+      "deployment_warning": "Do not expose this development service in production.",
+      "execution_claim": "Commands have not been run in the actual project."
+    }
+  },
+  {
+    "sample": "D20",
+    "answers": {
+      "why_stored_memory_can_fail": "The context window is limited; saved information is not necessarily in the current context. Needed information must have been saved, retrieved, and be relevant and helpful to this task. Storage capacity alone cannot guarantee continuity or accuracy.",
+      "does_storage_retrain_weights": "No. Long-term storage does not itself update the model’s trained internal parameters. Retrieved information supplies material for the current task."
+    }
+  },
+  {
+    "sample": "D21",
+    "answers": {
+      "numeric_facts": "This quarter, new registrations grew 15%; paid conversion fell from 4% to 3%. The comparison baseline for 15% is not specified.",
+      "cause_known": "No; the cause cannot yet be confirmed.",
+      "review_claims_file_edits": "No claim of editing files."
+    }
+  },
+  {
+    "sample": "D22",
+    "answers": {
+      "numeric_facts": "This quarter, new registrations grew 15%; paid conversion fell from 4% to 3%. The comparison baseline for 15% is not specified. The review says the difference is 1 percentage point, not a decline of 1%.",
+      "cause_known": "No; the cause cannot yet be confirmed.",
+      "review_claims_file_edits": "No; the review explicitly states that it has not modified files."
+    }
+  },
+  {
+    "sample": "D23",
+    "answers": {
+      "why_stored_memory_can_fail": "The context window is limited. Information stored outside it may never be retrieved into the current context, or the retrieved material may not suit the task; storing information alone does not ensure correct use.",
+      "does_storage_retrain_weights": "No. Long-term storage does not itself update the model’s trained internal parameters. Retrieved information supplies material for the current task."
+    }
+  },
+  {
+    "sample": "D24",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "default": "not specified",
+          "range": "not specified"
+        },
+        "limit": {
+          "type": "integer",
+          "required": false,
+          "default": 10,
+          "range": "1–100 inclusive"
+        }
+      },
+      "success_code": 201,
+      "missing_name_code": 400,
+      "claimed_api_product_name": "not specified",
+      "request_encoding": "not specified"
+    }
+  },
+  {
+    "sample": "D25",
+    "answers": {
+      "tradeoff": "A sends a fixed daily health summary to all users, with broader coverage and lower implementation cost. B alerts only on evidence-backed, actionable changes, with expected lower coverage and additional judgment logic. B’s user value is unverified; fewer alerts alone do not prove superiority.",
+      "choice_evidence": "Compare A/B in comparable user groups: reading, helpfulness, action, dismissals/annoyance, plus whether B triggers are justified and valuable changes missed. Set the evaluation period, behavior metrics, and thresholds beforehand. Expand B only if action/helpfulness gains justify the judgment logic cost."
+    }
+  },
+  {
+    "sample": "D26",
+    "answers": {
+      "why_stored_memory_can_fail": "The context window is limited, and the model does not automatically see all saved history. Relevant memories may be missed, irrelevant information retrieved, or outdated preferences reused.",
+      "does_storage_retrain_weights": "No. Long-term storage does not itself update the model’s trained internal parameters. Retrieved information supplies material for the current task."
+    }
+  },
+  {
+    "sample": "D27",
+    "answers": {
+      "python_version": "Python 3.11",
+      "working_directory": "Repository root",
+      "installation_command": "pip install -r requirements.txt",
+      "start_command": "python -m lantern serve --port 4310",
+      "health_command": "curl -i http://localhost:4310/health",
+      "success_status": "HTTP 200",
+      "failure_checks": "Check the process is still running and inspect startup errors; confirm port 4310 and that it is not occupied by another process. Resolve, restart, and request /health again.",
+      "deployment_warning": "Do not expose this development service in production.",
+      "execution_claim": "Commands have not been run in the actual project."
+    }
+  },
+  {
+    "sample": "D28",
+    "answers": {
+      "causation": "No. Lookup time fell from 12 to 8 minutes in a 40-person, two-week pilot, but obsolete knowledge-base documents were cleaned up at the same time, so the contributions cannot be separated. It is unclear whether lookup time includes verification.",
+      "next_trial": "Compare AI and non-AI search using the same cleaned knowledge base. Measure total task time through answer verification, answer correctness, and whether accessible, traceable sources support the answer; assess manual verification burden. Set efficiency and quality acceptance criteria before expansion. Record task completion and observe whether source improvements reduce verification burden."
+    }
+  },
+  {
+    "sample": "D29",
+    "answers": {
+      "why_stored_memory_can_fail": "The context window is limited, so relevant information must be retrieved from storage. Saved information may fail to be used correctly, and outdated or irrelevant memories may interfere.",
+      "does_storage_retrain_weights": "No. Long-term storage does not itself update the model’s trained internal parameters. Retrieved information supplies material for the current task."
+    }
+  },
+  {
+    "sample": "D30",
+    "answers": {
+      "why_stored_memory_can_fail": "Storage and current use differ: the limited context must receive the relevant memory. Wrong retrieval, missing important background, or outdated information can derail an answer.",
+      "does_storage_retrain_weights": "No. Long-term storage does not itself update the model’s trained internal parameters. Retrieved information supplies material for the current task."
+    }
+  },
+  {
+    "sample": "D31",
+    "answers": {
+      "tradeoff": "A sends a fixed daily health summary to all users, with broader coverage and lower implementation cost. B alerts only on evidence-backed, actionable changes, with expected lower coverage and additional judgment logic. B’s user value is unverified; fewer alerts alone do not prove superiority.",
+      "choice_evidence": "Observe comprehension, useful action suggestions, actual action, useless-alert feedback, and omissions; compare comparable A/B users where feasible. Pre-agree success criteria, assess judgment costs and omissions, and do not decide on send volume or reach alone. If the primary objective is low-cost daily reach, A fits it better."
+    }
+  },
+  {
+    "sample": "D32",
+    "answers": {
+      "numeric_facts": "This quarter, new registrations grew 15%; paid conversion fell from 4% to 3%. The comparison baseline for 15% is not specified.",
+      "cause_known": "No; the cause cannot yet be confirmed.",
+      "review_claims_file_edits": "No claim of editing files."
+    }
+  },
+  {
+    "sample": "D33",
+    "answers": {
+      "why_stored_memory_can_fail": "Saved information is not automatically visible in each answer because the context window is limited. Effectiveness depends on what is saved, its organization, and retrieving suitable material; outdated or irrelevant information must be handled.",
+      "does_storage_retrain_weights": "No. Long-term storage does not itself update the model’s trained internal parameters. Retrieved information supplies material for the current task."
+    }
+  },
+  {
+    "sample": "D34",
+    "answers": {
+      "python_version": "Python 3.11",
+      "working_directory": "Repository root",
+      "installation_command": "pip install -r requirements.txt",
+      "start_command": "python -m lantern serve --port 4310",
+      "health_command": "curl -i http://localhost:4310/health",
+      "success_status": "HTTP 200",
+      "failure_checks": "Check that the process remains running and has no startup errors; confirm service port 4310 and that the request uses the same port. Fix and repeat health check. A port-occupancy check is not specified.",
+      "deployment_warning": "Do not expose this development service in production.",
+      "execution_claim": "Commands have not been run in the actual project."
+    }
+  },
+  {
+    "sample": "D35",
+    "answers": {
+      "tradeoff": "A sends a fixed daily health summary to all users, with broader coverage and lower implementation cost. B alerts only on evidence-backed, actionable changes, with expected lower coverage and additional judgment logic. B’s user value is unverified; fewer alerts alone do not prove superiority.",
+      "choice_evidence": "Compare A/B among comparable users, measuring understanding, helpfulness, related actions, reach, and unnecessary interruption. Assess total users helped as well as per-alert results, and include development costs in pre-agreed success criteria. Validate B’s judgment reliability; expand only if user benefits justify the cost."
+    }
+  },
+  {
+    "sample": "D36",
+    "answers": {
+      "endpoint": "POST /v1/items",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true,
+          "default": "not specified",
+          "range": "not specified"
+        },
+        "limit": {
+          "type": "integer",
+          "required": false,
+          "default": 10,
+          "range": "1–100 inclusive"
+        }
+      },
+      "success_code": 201,
+      "missing_name_code": 400,
+      "claimed_api_product_name": "not specified",
+      "request_encoding": "The document claims an application/json request body in its HTTP example."
+    }
+  }
+]

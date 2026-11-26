@@ -12,7 +12,7 @@ class ManifestTests(unittest.TestCase):
 
     def test_release_identity_is_consistent(self):
         version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-        self.assertEqual(version, "0.1.0")
+        self.assertEqual(version, "0.2.0")
         portable = self.load("plugin.json")
         codex = self.load(".codex-plugin/plugin.json")
         claude = self.load(".claude-plugin/plugin.json")

@@ -10,6 +10,12 @@ writing-doc turns AI output into clear, useful documentation your audience can u
 
 <img src="assets/x-solution-en.png" width="600" alt="Make your audience get it—fast. Put the answer first. Keep only what they need. Turn every step into action. writing-doc turns AI output into clear, useful communication.">
 
+## v0.2.0 candidate
+
+The candidate extends the workflow to research reports, concept explanations, decision memos, and product designs. It adds evidence synthesis, reasoning paths, source-conflict handling, and a reader-focused editing pass while preserving technical accuracy and review-only boundaries. Inspired by public NotebookLM Reports concepts; it does not reproduce private prompts.
+
+Release and global installation are pending the [v0.2.0 verification record](docs/verification/v0.2.0.md). The v0.1.0 installation evidence below applies only to v0.1.0.
+
 ## Install
 
 **Public installation verified for v0.1.0.** The default-branch and tagged `skills` routes passed in isolated projects with skills 1.7.2. See the [exact verification record](docs/verification/v0.1.0.md).

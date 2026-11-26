@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "new_technical": 99.167,
+    "old_technical": 90.625,
+    "old_knowledge": 99.167,
+    "new_knowledge": 98.75
+  },
+  "dimension_means": {
+    "new": [
+      4,
+      3.972,
+      3.944,
+      3.889,
+      3.944
+    ],
+    "old": [
+      3.556,
+      4,
+      3.917,
+      3.917,
+      3.722
+    ]
+  },
+  "hard_failure_samples": {
+    "old": [
+      "F17",
+      "F22",
+      "F24"
+    ],
+    "new": []
+  },
+  "length_characters": {
+    "old": 11658,
+    "new": 10372
+  },
+  "advisory_knowledge_uplift_threshold_met": false,
+  "human_comprehension_or_reading_time_measured": false
+}
