@@ -1,0 +1,140 @@
+{
+  "K1": {
+    "request": "请基于下列材料，给只参加最后十分钟会议的运营负责人写一页中文决策简报。明天只能决定是否申请扩大试点。不要补外部事实。\n\n- [日报] 处理时间从 18 分钟降至 12 分钟。这个字段只记录坐席打开表单至提交的活跃时间。实施组 120 件，对照组 110 件。实施组在两周内先收到当日处置的简单工单。两组均使用新版宏。\n- [复核] 实施组每件的额外复核时间中位数为 5 分钟，对照组为 1 分钟。此时间未进入日报。同一工单没有跨系统的可用关联 ID。三条等待复核的工单延迟超过 24 小时。\n- [抽样] 简单工单一次通过率 92% 对 90%。复杂工单实施组只抽了 4 件，有 2 件需返工。两个组既不随机，也没有按难度配对。\n- [资源] 可以用接下来两周的小试点验证。可以加入匿名关联 ID，但没有预算增加复核席位。若出现等待复核超过 24 小时的工单，运营要求暂停试验并复盘。\n- [跨季] 上季度报表把“处理”定义为创建到结案的自然时间，整体中位数 31 小时。系统迁移后这个字段尚未在新报表中建好。\n",
+    "questions": [
+      "明天建议申请扩大还是维持小试点？为什么？",
+      "18 到 12 分钟究竟衡量什么，能否直接说总处理时间省了 6 分钟？",
+      "下一轮如何测净收益，什么情况下暂停？"
+    ],
+    "answers": [
+      "维持小试点，现有数据无法证明端到端节省或复核容量足够。",
+      "衡量活跃填表时间，未计复核和等待，不能说总时间省 6 分钟。",
+      "用匿名 ID 联结同单时间，按难度可比对照，覆盖从创建到结案及复核；超过 24 小时暂停。"
+    ],
+    "units": [
+      "建议暂不扩大",
+      "18→12 只算填表活跃时间",
+      "复核中位数 5 对 1 和/或超过 24 小时的实证",
+      "无 ID 不能直接合并统计",
+      "简单工单优先且无随机/难度配对",
+      "31 小时是不可直接比较的旧口径",
+      "按匿名 ID 追踪端到端并构造可比组",
+      "复核超 24 小时暂停"
+    ]
+  },
+  "K2": {
+    "request": "用中文向刚接手门店库存的区域经理解释，为什么两个团队都说“库存准确”，柜台还是会把已经留给别人的货卖掉。用材料中的规则教经理判断以后遇到的类似情形。只使用这些材料。\n\n- [实体] 闭店盘点数包含仍在店内的货，包括已经为网上订单放入待取货区的货。\n- [保留] 订单确认时，系统在保留账本加一笔。订单取货时，系统同时冲销保留和实体库存。订单取消仅冲销保留。门店没有其他出入库。\n- [读数] 线上可售数每次读实体数减去当前保留数。柜台屏幕从闭店快照读实体数，从上一次成功同步读保留数。正常每十分钟同步一次。屏幕显示的“截至时间”取两项中较新的更新时间。\n- [当日] 闭店盘点数 12，旧保留 2。次日上午新增 3 笔保留，每笔一件，没有取货或取消。阳光店的保留同步正在失败。\n- [调整] 拟议修法 X 只把截至时间改成较早的更新时间。修法 Y 在保留数据过期时暂停柜台承诺，直到恢复同步。现场提出当系统没显示错误时允许人工继续卖。\n",
+    "questions": [
+      "当天线上和柜台分别认为有几件可售，差额是什么？",
+      "为什么柜台上的新时间不能保证保留信息也新？",
+      "X、Y 解决的问题有什么不同，系统无错误可不可以直接继续卖？"
+    ],
+    "answers": [
+      "线上 7，柜台按旧保留显示 10，差额是新增的 3 件保留。",
+      "显示时间取两项中较新的，无法证明较老的保留数据更新。",
+      "X 暴露滞后，Y 过期时暂停承诺，恢复后再卖；未显示错误不等于数据新鲜。"
+    ],
+    "units": [
+      "实体库存含待取货商品",
+      "可售数等于实体减保留",
+      "线上 12−5=7",
+      "柜台 12−2=10 且同步失败",
+      "显示取较新时间可掩盖滞后",
+      "取货冲销两笔、取消只冲销保留",
+      "X 只能提示滞后",
+      "Y 过期时暂停承诺直到同步且无错误不足以继续卖"
+    ]
+  },
+  "K3": {
+    "request": "用给工程负责人看的中文产品方案，解释如何选择队列状态展示。上线阶段只能选一个默认展示。材料来自一个内部演练，不要补外部事实。方案要让负责人能据此作决定并理解何时重审。\n\n- [用户访谈] 值班人员需要知道客户是否还在等。主管需要判断流程是否需要加人。6 位受访者中 4 位说目前“已处理”被理解为客户已收到确认。\n- [事件] 接单入队时产生 queued，人工开始时产生 assigned，系统生成答复时产生 resolved，只有成功写入发送回执才产生 delivered。失败重试可能在 resolved 后重复更新答复，但回执最多一条。部分渠道目前不上传发送回执。\n- [数据] 昨天 200 个 resolved，其中 80 个渠道会上传回执。80 个中找到 66 个 delivered。另 120 个的发送状态没有数据。日报的“92% 已处理”以 200 个 resolved 除以 217 个 assigned。\n- [样式] 方案 A 只在有回执时显示“已送达”，无回执显示“送达状态未知”，并单独显示处理进度。方案 B 用 resolved 显示“已处理”，失败时覆盖成“待重试”。方案 A 需要改文案和事件映射，方案 B 只改文案。\n- [限制] 默认展示的首要目标是避免值班人员把客户当成已被通知。没有可以外呼确认的权限。两周后可能接入一个现缺回执的渠道，未承诺日期。\n",
+    "questions": [
+      "默认选 A 还是 B，值班人员从没有回执的状态能知道什么？",
+      "92% 表示什么？能按回执算出所有订单的送达率吗？",
+      "状态选择用什么条件或数据重新评估？"
+    ],
+    "answers": [
+      "选 A；没有回执意味着送达状态未知，值班不能据此当成已通知。",
+      "约 92% 是 200 resolved/217 assigned；66/80 只属可回传渠道，另 120 无数据，无法算全量送达率。",
+      "新渠道接入后检验回执覆盖/质量（或用户是否误判），别把预计接入视为完成。"
+    ],
+    "units": [
+      "选 A 做默认",
+      "resolved 只表示答复生成，delivered 要回执",
+      "没有回执显示未知并独立显示处理进度",
+      "92% 是 200/217 的处理指标",
+      "66/80 属可回传渠道",
+      "120 未知不可推断全量送达率",
+      "A 比 B 多改事件映射",
+      "以实际回执接入或误判数据为重审条件"
+    ]
+  },
+  "T1": {
+    "request": "Write a compact English API reference from the approved excerpt below. Keep it usable as a lookup page. You cannot access additional sources. Use enough detail for an implementer to tell what remains unspecified.\n\nApproved excerpt v4:\n- POST /v4/copies\n- source_id: required string. count: optional integer, defaults to 2, allowed 1 through 9 inclusive.\n- 202 indicates accepted into the queue. 422 if source_id is missing or count is outside the allowed range. 409 while another copy for the same source is active.\n- The operation never starts a second copy when it returns 409.\n- The old example shows POST /v3/copy and a JSON response with `state`, for illustration of the retired API only.\n- The new excerpt gives no encoding, parameter transport, response body, completion check, or authentication details.\n",
+    "questions": [
+      "Which method and path should the implementer use, and what does 202 mean?",
+      "What does 409 mean and what happens on that response?",
+      "Which fields, limits, and protocol details are specified or unknown?"
+    ],
+    "answers": [
+      "POST /v4/copies. 202 means queued for processing.",
+      "Another copy for the same source is active. It does not start a second copy.",
+      "source_id is a required string; count is an optional integer, default 2, 1–9; encoding/field location/body/completion/authentication are unspecified."
+    ],
+    "units": [
+      "POST /v4/copies",
+      "source_id required string",
+      "count optional integer default 2 and range 1–9",
+      "202 queued",
+      "422 for missing source_id or out-of-range count",
+      "409 active same source and no second copy",
+      "unknown encoding and parameter location",
+      "unknown body, completion check and authentication"
+    ]
+  },
+  "T2": {
+    "request": "为能用终端但第一次启动系统的开发者写中文本地启动指南。提供的命令照录，未授权实际运行。只使用以下资料。\n\n临时实例只限本机。不要在生产环境运行。从仓库根目录执行，使用 Node.js 22。开发者复制 `config.sample.toml` 为 `config.local.toml`。默认端口 4612，不通过公网地址验证。安装命令 `npm ci --ignore-scripts`。启动命令 `npm run local -- --host 127.0.0.1 --port 4612`。系统启动日志出现 `ready for local requests` 后，在另一终端运行 `curl http://127.0.0.1:4612/state`。就绪时响应体是 `LOCAL_READY`。如果端口已被占用，先确认占用进程归属。只在确认是这个仓库的旧实例时关闭它，再重试。服务没有授权的替代端口。\n",
+    "questions": [
+      "最重要的运行限制是什么？在什么目录、用哪个 Node.js 版本？",
+      "如何安装和启动？",
+      "如何验证成功？遇到占用端口何时可关闭进程？"
+    ],
+    "answers": [
+      "仅限本机，不用于生产；在仓库根目录用 Node.js 22。",
+      "npm ci --ignore-scripts；npm run local -- --host 127.0.0.1 --port 4612。",
+      "等到 ready for local requests，从另一终端 curl http://127.0.0.1:4612/state，响应 LOCAL_READY；确认是本仓库旧实例才关闭。"
+    ],
+    "units": [
+      "本机限制且禁止生产",
+      "仓库根目录和 Node.js 22",
+      "配置文件复制",
+      "原样保留 npm ci --ignore-scripts",
+      "原样保留 npm run local -- --host 127.0.0.1 --port 4612",
+      "等到 ready for local requests",
+      "另一终端使用原样 curl 且结果 LOCAL_READY",
+      "端口归属及旧实例才可关"
+    ]
+  },
+  "T3": {
+    "request": "Review the following runbook excerpt in English. Return only material findings with specific fixes. It is a review-only task. Use the reference facts below.\n\nDRAFT\n1. On any workstation enter `relay publish --target demo --dry-run`.\n2. When the command exits successfully, tell the customer that their report is online.\n3. If you see `waiting for manifest`, just repeat step 1 until it goes away.\n\nREFERENCE FACTS\n- The command is valid from the repository root after the preview profile has been selected.\n- `--dry-run` only validates configuration. An exit code of 0 does not submit a report.\n- Only an operator with publish authorization can publish. The final publication command is not in this reference.\n- `waiting for manifest` means the local build manifest is missing. Repeating the dry run does not create it. The build procedure is outside this excerpt.\n",
+    "questions": [
+      "What does a successful dry run prove? Is the report online?",
+      "What prerequisites does the dry run have?",
+      "What does waiting for manifest mean and what is the appropriate correction?"
+    ],
+    "answers": [
+      "Configuration validation only. It does not publish the report.",
+      "Repository root and a selected preview profile.",
+      "The build manifest is missing. Use the applicable build procedure, then retry; repeating the dry run cannot create it."
+    ],
+    "units": [
+      "repo root",
+      "preview profile selected",
+      "dry run validates configuration only",
+      "do not tell customer it is online based on dry run",
+      "an authorized operator must publish and final command is unspecified",
+      "waiting for manifest means missing local build manifest",
+      "repeating dry run will not create it",
+      "point to applicable build procedure without inventing it"
+    ]
+  }
+}

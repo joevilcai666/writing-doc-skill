@@ -1,0 +1,21 @@
+{
+  "model": "gpt-6.1-terra",
+  "reasoning_effort": "low",
+  "codex_cli": "0.162.1",
+  "source_archive_sha256": "fb872e8002f424a7ec9e552466b7904ca8c52bd089d03544a602ea857307f223",
+  "plan_sha256": "5084315982e68197c5136521bb3ce5a7039f5a9c30e5eb0c41d1002f8f07c86d",
+  "case_hashes": {
+    "K1": "90c61c2bcd126d25339000fd436deaa286cd2bc0bb36388baa1a7f7c7a9b6ab3",
+    "T3": "dbe54c23aec497def1ae30186055529a70911a423f2ffb2b45896340312d82a6",
+    "T2": "d238ec255ac490afc8c767d35dc85837afdfc044cf7dc8564f3c3602d5219396",
+    "T1": "eb7f0f21d8993e1dbfa141a9fc413c7ef3cad7d4f730de2866479e67e3f41236",
+    "K3": "63088a70aa8ad7fe97437b071bc5d018a4a86a8f5b9640747956a99f9218d6d0",
+    "K2": "7b7cce912afa92a1ee173b7426557bca86ea01cda8cc1d684c3ae22a5a6812cd"
+  },
+  "key_sha256": "b09f7e9d0f14f067c2c0477030cb7a86992b010f6b719d068565442c7a322d20",
+  "random_seeds": [
+    261128,
+    261129
+  ],
+  "original_source_members_match_recovered_standalone_files": true
+}

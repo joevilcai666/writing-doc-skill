@@ -10,15 +10,15 @@ writing-doc 把 AI 输出变成目标读者看得懂、用得上、能照着行�
 
 <img src="assets/x-solution-zh-CN.png" width="600" alt="让目标读者一眼看懂。把答案放在第一句。只保留读者需要的内容。让每一步都能照着做。writing-doc：把 AI 输出变成清楚、好懂、能行动的文档。">
 
-## v0.2.0 候选版
+## v0.2.0 更新
 
-新版扩展到研究报告、概念解释、决策备忘录和产品设计；增加证据综合、理解路径、来源分歧处理和读者视角编辑，并保留技术准确性与只审阅不改文件的边界。借鉴 NotebookLM Reports 的公开理念，不复刻内部提示词。
+新版支持研究报告、概念解释、决策备忘录和产品设计。它按读者要解决的问题组织证据，先核对各来源的统计口径，再比较结果。新版原样保留指定命令。用户只要求审阅时，它只报告问题和改法。结构选择借鉴了 [Google 公开的报告选项](https://support.google.com/gemininotebook/answer/18323649?hl=zh-Hans)。
 
-正式发布与全局安装取决于 [v0.2.0 验证记录](docs/verification/v0.2.0.md)。下方 v0.1.0 的安装证据仅适用于 v0.1.0。
+[v0.2.0 验证记录](docs/verification/v0.2.0.md) 包含模型输出对比和安装验证结果。
 
 ## 安装
 
-**v0.1.0 公开安装已验证。** skills 1.7.2 的默认分支与固定标签安装均在隔离项目中通过。详见[准确验证记录](docs/verification/v0.1.0.md)。
+已验证的安装路径见 [v0.2.0 验证记录](docs/verification/v0.2.0.md)。早期测试见 [v0.1.0 记录](docs/verification/v0.1.0.md)。
 
 准备好 Node.js、npm 和 Git，在要使用技能的项目中运行：
 
@@ -68,6 +68,8 @@ Lantern API 是虚构服务。这个示例由人工编写，用于展示目标�
 
 | 文档 | 帮读者完成什么 |
 | --- | --- |
+| 研究报告 | 看清来源的共识、分歧与证据的适用范围。 |
+| 决策备忘录或产品设计 | 查找建议、取舍和重新评估的条件。 |
 | README | 快速知道项目能做什么，并完成第一个有用的任务。 |
 | 操作指南、教程 | 准备好前置条件，照着步骤做，确认结果。 |
 | API 文档 | 找到需要的调用，理解参数和返回结果。 |
@@ -80,14 +82,14 @@ writing-doc 把答案前移，删掉废话，补上完成任务所需的说明�
 
 ## 其他安装方式
 
-以下 Codex CLI 插件和 Claude Code 路径已通过公开安装验证。桌面选择器与模型行为尚未验证。同一个 Agent 选择一种方式即可，避免出现重复技能。
+每个客户端选择一种安装方式。已测客户端和模型任务见验证记录。桌面选择器尚未验证。
 
 ### Codex
 
 Codex CLI 0.162.1 的插件路径已通过：
 
 ```sh
-codex plugin marketplace add joevilcai666/writing-doc-skill --ref v0.1.0 --json
+codex plugin marketplace add joevilcai666/writing-doc-skill --ref v0.2.0 --json
 codex plugin add writing-doc@writing-doc-skill --json
 codex plugin list --json
 ```
@@ -97,7 +99,7 @@ codex plugin list --json
 在 Codex 对话中使用内置 Skill Installer：
 
 ```text
-$skill-installer install https://github.com/joevilcai666/writing-doc-skill/tree/v0.1.0/skills/writing-doc
+$skill-installer install https://github.com/joevilcai666/writing-doc-skill/tree/v0.2.0/skills/writing-doc
 ```
 
 这个独立的 Skill Installer 路径仍为 **Planned for v0.1.0 verification（待验证）**。此路径安装共享技能。安装后，在技能选择器中确认出现 `writing-doc`。若未出现，重启 Codex。具体机制见 [OpenAI 官方技能指南](https://learn.chatgpt.com/docs/build-skills#install-curated-skills-for-local-use)。
@@ -113,7 +115,7 @@ claude plugin marketplace add joevilcai666/writing-doc-skill
 claude plugin install writing-doc@writing-doc-skill --scope local
 ```
 
-这些命令在隔离配置中通过，客户端为 Claude Code 2.1.295。CLI 显示插件已启用，安装技能与源码一致。市场注册作用于你的用户账户。插件的 `local` 范围只对当前项目中的你生效。新建 Claude Code 会话，在 `/plugin` 中确认插件出现。
+市场注册作用于你的用户账户。插件的 `local` 范围只对当前项目中的你生效。新建 Claude Code 会话，在 `/plugin` 中确认插件出现。
 
 具体说明见 [Claude Code 官方安装指南](https://code.claude.com/docs/en/discover-plugins)。
 
@@ -124,7 +126,7 @@ claude plugin install writing-doc@writing-doc-skill --scope local
 `skills` 使用带标签的完整路径：
 
 ```sh
-npx skills add https://github.com/joevilcai666/writing-doc-skill/tree/v0.1.0/skills/writing-doc --skill writing-doc
+npx skills add https://github.com/joevilcai666/writing-doc-skill/tree/v0.2.0/skills/writing-doc --skill writing-doc
 ```
 
 Claude Code 的默认分支与固定标签二选一。替换已有市场注册前，先确认移除注册的影响。
@@ -134,22 +136,22 @@ Claude Code 的默认分支与固定标签二选一。替换已有市场注册�
 如果决定切换，先运行上述移除命令，再注册带标签的市场：
 
 ```sh
-claude plugin marketplace add joevilcai666/writing-doc-skill#v0.1.0
+claude plugin marketplace add joevilcai666/writing-doc-skill#v0.2.0
 ```
 
 注册带标签的市场后，按原来的范围重新安装所有受影响的副本。本地副本使用 `claude plugin install writing-doc@writing-doc-skill --scope local`。
 
-Git 标签固定的是技能源码，不会固定安装器或 Agent 的版本。带标签的 `skills`、Codex CLI 和 Claude 市场安装均已通过。替换已有市场注册的过程尚未验证。
+Git 标签固定的是技能源码，不会固定安装器或 Agent 的版本。已测路径见验证记录。替换已有市场注册的过程尚未验证。
 
 ### 手动安装
 
 准备好 Git，将指定版本克隆到一个新目录：
 
 ```sh
-git clone --depth 1 --branch v0.1.0 https://github.com/joevilcai666/writing-doc-skill.git
+git clone --depth 1 --branch v0.2.0 https://github.com/joevilcai666/writing-doc-skill.git
 ```
 
-将整个 `skills/writing-doc` 文件夹复制到客户端的技能目录。Codex 项目目录使用 `.agents/skills/writing-doc`。标签克隆和此文件夹复制已通过逐字节比较，客户端发现尚未验证。保留其中的 `SKILL.md`。如果目标位置已有同名文件夹，先比较内容，再决定是否替换。
+将整个 `skills/writing-doc` 文件夹复制到客户端的技能目录。Codex 项目目录使用 `.agents/skills/writing-doc`。保留其中的 `SKILL.md`。如果目标位置已有同名文件夹，先比较内容，再决定是否替换。
 
 其他客户端请使用其文档规定的 Agent Skills 目录。确认客户端列出 `writing-doc` 后，用一小段虚构文档试用。
 
@@ -181,11 +183,11 @@ Agent、模型服务、工具和安装器各自适用自己的数据政策。第
 | 证据层级 | 当前状态 |
 | --- | --- |
 | 已实现（Implemented） | 共享技能、客户端清单、确认图片、虚构示例和本地检查已存在。 |
-| 本地验证（Locally verified） | 准确发布提交通过 125 项测试、完整发布检查、全历史隐私扫描、技能验证器、真实隔离 Codex 安装和 Claude 严格验证。 |
-| 公开验证（Publicly verified） | 匿名 main/tag 克隆、Release ZIP 与校验值、默认与固定版本的 `skills` 安装、Codex 固定版本插件安装与卸载、Claude 默认与固定版本插件安装均通过。安装技能与标签源码一致。 |
+| 本地验证（Locally verified） | v0.2.0 验证记录列出具体提交、回归测试、发布检查及隔离安装结果。 |
+| 公开验证（Publicly verified） | 公开验证见 [v0.2.0 验证记录](docs/verification/v0.2.0.md)。早期路径见 [v0.1.0 记录](docs/verification/v0.1.0.md)。 |
 | 用户验收（User accepted） | 此包的实现尚无用户验收记录。 |
 
-[v0.1.0 Release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) 已公开。Codex CLI 0.162.1 没有 `plugin validate` 命令，发布检查改用真实市场安装和逐字节比较。模型行为、读者理解、桌面发现和其他卸载路径尚未验证。详见[当前工作方式与限制](HOW_IT_WORKS.md)和[分发状态](docs/distribution.md)。这两份维护文档目前为英文。
+[v0.2.0 Release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.2.0) 提供 ZIP 和 SHA-256 校验文件。A/B 使用合成任务与模型读者。详见[当前工作方式与限制](HOW_IT_WORKS.md)和[分发状态](docs/distribution.md)。这两份维护文档目前为英文。
 
 ## 让下一位读者少走一步弯路
 

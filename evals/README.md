@@ -33,3 +33,7 @@ The [expected document](../demo/expected/SETUP_GUIDE.md) is synthetic and illust
 The checks do not prove factual correctness, reader comprehension, language retention, review-only behavior, or real agent performance.
 They do not start a service or contact the health URL.
 Manual review and real client sessions remain necessary for broader behavior evidence.
+
+## Model-output evaluation
+
+The [v0.2.0 verification record](../docs/verification/v0.2.0.md) compares actual model outputs for the published skill and its baseline. It links to the task sources, samples, blinded judgments, and reader answers. The model tests use synthetic data.

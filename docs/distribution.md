@@ -1,11 +1,8 @@
 # Distribution status
 
-The v0.2.0 candidate has passed local package and isolated Codex installation checks. Publication and normal global updates remain unverified; v0.1.0 channel evidence below is historical. See [candidate verification](verification/v0.2.0.md).
+The package is `writing-doc` version `0.2.0`. The [verification record](verification/v0.2.0.md) identifies the exact release commit, model-output evaluation, and tested installation routes.
 
-The public package is `writing-doc` version `0.1.0`.
-Repository: [joevilcai666/writing-doc-skill](https://github.com/joevilcai666/writing-doc-skill), default branch `main`.
-Annotated tag `v0.1.0` points to tested commit `9630868f9c0b491cfd28511fa88f551f4cd5f5d3`.
-Later documentation on `main` does not change the tag or Release assets.
+The [public repository](https://github.com/joevilcai666/writing-doc-skill) uses `main` as its default branch. The tag `v0.2.0` identifies the source for the release ZIP.
 
 ## Channel states
 
@@ -14,7 +11,7 @@ Only these status values apply: `planned`, `published`, `listed`, `submitted`, `
 | Channel | Status | Evidence or remaining action |
 | --- | --- | --- |
 | GitHub repository | published | [Public repository](https://github.com/joevilcai666/writing-doc-skill). Anonymous main/tag clones passed. |
-| GitHub Release | published | [v0.1.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0), deterministic ZIP and checksum. Anonymous download matched GitHub's SHA-256 digest. |
+| GitHub Release | published | [v0.2.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.2.0), deterministic ZIP and checksum. See the verification record for asset checks. |
 | skills.sh | planned | [Skill URL](https://skills.sh/joevilcai666/writing-doc-skill/writing-doc) returned HTTP 200 with a missing-skill fallback and no canonical GitHub source. [Repository URL](https://skills.sh/joevilcai666/writing-doc-skill) returned HTTP 404. No verified listing. |
 | OpenAI directory | planned | No submission receipt or official listing. Public self-hosted Codex plugin installation passed. |
 | Anthropic directory | planned | No submission receipt or official listing. Public self-hosted Claude marketplace installation passed. |
@@ -27,17 +24,14 @@ Publication and self-hosted marketplaces do not imply endorsement or official re
 ## Install routes and version identity
 
 The [English README](../README.md) and [Chinese README](../README.zh-CN.md) contain the commands.
-Public tests used skills 1.7.2, Codex CLI 0.162.1, and Claude Code 2.1.295.
-Default and tagged `skills` installations passed. Codex's pinned marketplace and Claude's main/tag marketplaces passed.
-Each installed `SKILL.md` matched the tagged source byte for byte.
-The manual tagged folder copy also matched. Desktop discovery and model execution remain unverified.
+The v0.2.0 verification record lists the installer and client versions and compares each tested installation with the tagged skill files. The [v0.1.0 record](verification/v0.1.0.md) covers its earlier tests.
 The Codex CLI plugin remove route passed a fresh isolated public v0.1.0 install/remove trial.
 The plugin cache and enablement entry disappear. Marketplace registration and its source checkout remain.
 Optional Codex marketplace removal affects the configured source and remains unverified.
 The separate Codex Skill Installer and other removal routes remain pending.
 
 The short `skills` command and unpinned Claude marketplace select the default branch.
-Tagged commands select `v0.1.0`. A tag fixes package source, not the client or installer version.
+Tagged commands select `v0.2.0`. A tag fixes package source, not the client or installer version.
 CLI installation does not establish directory acceptance or correct model behavior.
 
 ## Evidence and remaining work
@@ -45,8 +39,8 @@ CLI installation does not establish directory acceptance or correct model behavi
 | Evidence level | Current result |
 | --- | --- |
 | Implemented | Shared skill, manifests, assets, synthetic demo, checks, and public documentation exist. |
-| Locally verified | Exact release commit passed 125 tests, all release stages, full-history privacy checks, and actual client validation. |
-| Publicly verified | Anonymous source and asset access, checksums, CLI installation and listing, and installed-skill byte comparisons passed. |
+| Locally verified | See the v0.2.0 record for regression, gate, package and isolated client checks. |
+| Publicly verified | See the v0.2.0 record for verified source, asset and client access. |
 | User accepted | Four source images have user approval. Package implementation and reader outcomes have no acceptance record. |
 
 The repository has zero registered runners. Exact-commit checks ran directly on local macOS arm64.
@@ -56,8 +50,6 @@ Private vulnerability reporting is enabled. Topics: `agent-skills`, `codex`, `cl
 Social-preview upload remains pending. GitHub rejected the 1,114,198-byte original because it exceeds 1 MB.
 An upload-only 972,388-byte PNG preserves the exact decoded RGBA pixels and has no private metadata.
 The user's active browser prevented the second upload. No completed upload or public preview is claimed.
-Official directory submission, desktop discovery, actual model tasks, other uninstall checks, and user acceptance remain pending.
+Official directory submission, desktop selection, other uninstall checks, and user acceptance remain open.
 
-See the [verification record](verification/v0.1.0.md) for commands, source identity, digests, and limits.
-
-最后更新时间：2026-10-15 21:34（Asia/Shanghai）
+最后更新时间：2026-11-26（Asia/Shanghai）

@@ -1,18 +1,16 @@
 # How Writing Doc Works
 
-`writing-doc` guides an agent to turn verbose AI output into technical documentation that a target reader can understand and use.
+`writing-doc` guides an agent to write, revise, and review documents for a specific reader. It covers research, explanations, decisions, product designs, and technical documentation.
 
 The skill is an editor's desk: it keeps the source facts but rearranges them so the intended reader can find and use them.
 
 To create and maintain a living product explanation like this document for another project, use the [how-it-works skill](https://github.com/joevilcai666/how-it-works-skill).
 
 The package contains instructions for the user's agent, not a separate document service.
-This working tree defines the package identity for candidate `0.2.0`; v0.1.0 remains the published release.
-
-The candidate chooses an understanding path for research, concepts, decisions, product designs, operations, and API lookup. It synthesizes sources by topic, distinguishes evidence from inference, and edits for accurate understanding before sentence brevity. Read the [current verification](docs/verification/v0.2.0.md) for release blockers. Historical v0.1.0 evidence below does not verify this candidate.
+The package version is `0.2.0`. The [verification record](docs/verification/v0.2.0.md) gives the exact release checks, model comparisons, and installation evidence.
 The package uses the MIT license.
 Its configured repository URL is `https://github.com/joevilcai666/writing-doc-skill`.
-The repository and [v0.1.0 Release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) are public.
+The [v0.2.0 release page](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.2.0) provides the package and checksum.
 
 ## Find the part you need
 
@@ -20,7 +18,7 @@ The repository and [v0.1.0 Release](https://github.com/joevilcai666/writing-doc-
 - [Documentation workflow](#documentation-workflow-and-visuals) explains what the agent receives.
 - [Evidence and limits](#evidence-and-limits) separates implementation from real use.
 - [Synthetic demonstration](#synthetic-demonstration-and-local-rubric) explains what the local example proves.
-- [Local gates](#local-repository-and-privacy-gates) explains the publication checks and current blockers.
+- [Local gates](#local-repository-and-privacy-gates) explains the publication checks.
 - [Release archive](#deterministic-release-archive) explains the ZIP and checksum builder.
 
 ## Package structure
@@ -70,8 +68,7 @@ It does not prove that a client loaded or invoked the skill.
 ## Documentation workflow and visuals
 
 The shared `skills/writing-doc/SKILL.md` contains the authoritative Chinese instructions.
-It identifies the reader and task, puts answers first, and preserves technical facts.
-It keeps the user's language and checks whether the reader can complete the task.
+It identifies the reader and their goal. For complex tasks, it groups evidence by question, checks what each source measures, and chooses an order that helps the reader understand the reasoning. It puts the answer or action early, preserves source limits and exact commands, and checks what a reader can infer or do. It keeps the user's language.
 For review-only requests, it reports concrete problems and fixes without file edits.
 It excludes marketing copy, literary text, and file conversion without a documentation task.
 
@@ -79,10 +76,10 @@ It excludes marketing copy, literary text, and file conversion without a documen
 flowchart TD
     A["User request and source material"] --> B["Agent identifies the reader and task"]
     B --> C{"Requested action?"}
-    C -->|"Write or rewrite"| D["Preserve facts, commands, links, and conditions"]
-    D --> E["Put the answer first and make steps usable"]
+    C -->|"Write or rewrite"| D["Group related evidence and identify what it supports"]
+    D --> E["Order the evidence and explanation for the reader’s goal"]
     C -->|"Review only"| F["Report concrete problems and fixes without file edits"]
-    E --> G["Check accuracy, clarity, language, and result checks"]
+    E --> G["Check facts, understanding, and actions against source material"]
     F --> G
     G --> H["Return the requested document or review"]
 ```
@@ -108,14 +105,14 @@ The built-in image generator produced the preview, and a proportional resize set
 | Evidence level | Meaning | Current state |
 | --- | --- | --- |
 | Implemented | The files or behavior exist in the repository. | Version, license, manifests, skill metadata, shared skill, five PNG assets, synthetic rubric, local gates, public docs, deterministic archive builder, release note, and verification template exist. |
-| Locally verified | A local check passed on an identified source state. | Release commit `9630868f9c0b491cfd28511fa88f551f4cd5f5d3` passed 125 tests, including 19 archive tests, the full release gate, full-history privacy checks, the skill validator, real isolated Codex installation, and Claude strict validation. |
-| Publicly verified | A check passed against a public clone, download, or installation. | Anonymous main/tag clones and Release downloads passed. Default/tagged skills installations, Codex pinned plugin installation/removal, and Claude main/tag plugin installations passed. Installed skills matched the tag byte for byte. |
+| Locally verified | A local check passed on an identified source state. | The v0.2.0 verification record identifies the exact source and lists the suite, release gate, and isolated installs. |
+| Publicly verified | A check passed against a public clone, download, or installation. | The v0.2.0 verification record identifies the public tag, download, and install routes checked. The v0.1.0 record covers its earlier public trials. |
 | User accepted | The user explicitly accepted the result under review. | The user approved the four source images. No user acceptance evidence exists for this package implementation or actual reader outcomes. |
 
 The local checks cover package metadata, required skill boundaries, PNG dimensions, and source-copy integrity.
 They do not establish agent behavior or reader comprehension.
 Visual inspection covers the preview text, composition, and legibility.
-The [verification record](docs/verification/v0.1.0.md) identifies commands, environment, source commit, and evidence limits.
+The [v0.2.0 verification record](docs/verification/v0.2.0.md) lists commands, environment, source identity, and evidence limits.
 The READMEs label the separate Codex Skill Installer and other removal routes as pending.
 The [distribution record](docs/distribution.md) contains channel status, not an endorsement claim.
 
@@ -139,7 +136,7 @@ The full local suite includes these checks and the repository gate tests.
 
 These results cover static synthetic documents and deterministic checks.
 They do not prove that an agent follows the skill, that a service runs, or that a real reader understands the result.
-Language retention, review-only behavior, scope selection, desktop discovery, and reader outcomes still need runtime evidence.
+Separate A/B experiments compare actual model outputs for knowledge and technical tasks. Model readers test which answers the text supplies. Human reading speed and desktop discovery remain open.
 
 ## Local repository and privacy gates
 
@@ -164,9 +161,8 @@ flowchart TD
     K --> O["Build tracked current files into a deterministic ZIP"]
     O --> P["Inspect archive paths, privacy, and SHA-256"]
     P --> L["Publish the tag, archive, and checksum"]
-    L --> M["Public clone, checksum, and CLI installations verified"]
-    M --> R["Codex plugin removal verified; marketplace registration retained"]
-    R --> N["Record evidence on main; user acceptance remains pending"]
+    L --> M["Check public source, asset hash, and isolated client installs"]
+    M --> N["Update existing global copies and confirm released skill bytes"]
 ```
 
 The privacy scanner reads tracked files and non-ignored untracked files. This includes hidden files.
@@ -221,16 +217,13 @@ The release gate uses a private validator override that performs real marketplac
 Each validator run uses isolated HOME, CODEX_HOME, and XDG_CONFIG_HOME directories.
 It returns failure if a command or byte comparison fails. No validator stub enters the public package.
 
-The public README files exist.
-The tagged archive and checksum are public, and anonymous downloads match the local bytes and GitHub asset digest.
-Public CLI installation and discovery passed in isolated configurations.
-A fresh pinned Codex install/remove trial also passed in isolated HOME, CODEX_HOME, and XDG_CONFIG_HOME directories.
+The public README files include installation paths. The v0.2.0 verification record reports the release asset checks and isolated installations. The v0.1.0 record covers the pinned Codex install/remove trial.
 `codex plugin remove writing-doc@writing-doc-skill --json` removes the installed plugin cache and plugin enablement entry.
 The plugin list becomes empty. The marketplace registration and source checkout remain.
 Optional marketplace removal is a separate operation on the configured source and remains unverified.
 The trial used a credential-free environment whitelist and unchanged snapshots of three normal client control files.
 The repository has zero registered runners. Equivalent checks run directly on the exact local commit.
-The tagged docs retain the candidate snapshot. Current publication evidence lives on `main`.
+The tag identifies the packaged source. The release verification record on `main` records the public download and install results.
 
 No GitHub Actions status or billing check serves as the release gate.
 Local evidence must identify the exact commit, commands, environment, and results before publication.
@@ -238,7 +231,7 @@ Local evidence must identify the exact commit, commands, environment, and result
 These checks detect fixed patterns and structural defects.
 They do not prove that all private information is absent.
 Ignored untracked files, Git author metadata, unreachable Git objects, and compressed archive contents need separate review when relevant.
-Desktop discovery, model requests, other uninstall routes, and user acceptance remain unverified.
+The model-output comparisons use explicit prompts. Desktop auto-selection, other uninstall routes, and user acceptance remain open.
 The skills.sh skill URL returned HTTP 200 with a missing-skill fallback. The repository page returned HTTP 404.
 The package therefore has no verified skills.sh listing or official directory submission.
 GitHub private vulnerability reporting is enabled, and all five requested topics are present.
@@ -254,7 +247,7 @@ It checks file identity, not publisher identity or the absence of private data.
 `python3 scripts/build_release.py --output dist` builds a local package archive.
 The API is `build_release(root: Path, output_dir: Path) -> tuple[Path, str]`.
 It returns the archive path and its SHA-256 value.
-For version `0.1.0`, the outputs are `writing-doc-skill-v0.1.0.zip` and its `.zip.sha256` sidecar.
+For version `0.2.0`, the outputs are `writing-doc-skill-v0.2.0.zip` and its `.zip.sha256` sidecar.
 The builder does not authorize publication or bypass the release gate.
 
 ```mermaid
@@ -287,17 +280,13 @@ It reports fixed error text without private values, paths, or Git diagnostics.
 Every entry uses `1980-01-01 00:00:00` and Unix permissions `0644` or `0755`.
 Names use UTF-8, and every file sits under `writing-doc-skill/`.
 The ZIP uses no compression, which avoids compression-library differences between build hosts.
-The checksum sidecar names only the ZIP filename. Run `shasum -a 256 -c writing-doc-skill-v0.1.0.zip.sha256` from `dist/`.
+The checksum sidecar names only the ZIP filename. Run `shasum -a 256 -c writing-doc-skill-v0.2.0.zip.sha256` from `dist/`.
 
 Local archive tests cover repeated bytes, exact file sets, Unicode names, permission normalization, checksum contents, CLI exits, and failure paths.
 They also cover private text, PNG metadata, source symlinks, destination symlinks, submodules, missing files, and Git errors.
 Encoding checks cover all four BOM-less UTF-16 and UTF-32 forms across current files, index blobs, reachable history, deleted history, and archives.
 Safe ASCII, UTF-8, text with a BOM, and PNG data retain their accepted behavior.
 Archive checks do not inspect Git history or prove client installation.
-The Release asset contains the tested tag, with 44 files and 9,368,270 bytes.
-Two builds produced identical bytes. The public download has SHA-256 `466d52a773f98ccf196ed93dd79a144862d60e661e4041cdfb4065960fbc660b`.
-Later evidence changes on `main` do not rebuild or replace that asset.
-The [tagged release note](docs/releases/v0.1.0.md) describes the candidate snapshot.
-The [verification record](docs/verification/v0.1.0.md) reports the final publication checks.
+The Release ZIP contains files from the tested tag. Later evidence changes on `main` do not replace that asset. The [release note](docs/releases/v0.2.0.md) describes the package. The [verification record](docs/verification/v0.2.0.md) reports packaging and publication checks.
 
 最后更新时间：2026-11-26（Asia/Shanghai）

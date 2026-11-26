@@ -10,15 +10,15 @@ writing-doc turns AI output into clear, useful documentation your audience can u
 
 <img src="assets/x-solution-en.png" width="600" alt="Make your audience get it—fast. Put the answer first. Keep only what they need. Turn every step into action. writing-doc turns AI output into clear, useful communication.">
 
-## v0.2.0 candidate
+## What changed in v0.2.0
 
-The candidate extends the workflow to research reports, concept explanations, decision memos, and product designs. It adds evidence synthesis, reasoning paths, source-conflict handling, and a reader-focused editing pass while preserving technical accuracy and review-only boundaries. Inspired by public NotebookLM Reports concepts; it does not reproduce private prompts.
+Writing Doc now covers research reports, concept explanations, decision memos, and product designs. It groups evidence by question and checks what each source measures before comparing results. It keeps supplied commands intact and reports fixes without editing files when you request review only. Its choice of structure draws on [Google’s public report options](https://support.google.com/gemininotebook/answer/18323649?hl=en).
 
-Release and global installation are pending the [v0.2.0 verification record](docs/verification/v0.2.0.md). The v0.1.0 installation evidence below applies only to v0.1.0.
+Read the [v0.2.0 verification record](docs/verification/v0.2.0.md) for model output comparisons and installation evidence.
 
 ## Install
 
-**Public installation verified for v0.1.0.** The default-branch and tagged `skills` routes passed in isolated projects with skills 1.7.2. See the [exact verification record](docs/verification/v0.1.0.md).
+See the [v0.2.0 verification record](docs/verification/v0.2.0.md) for tested install routes. The [v0.1.0 record](docs/verification/v0.1.0.md) covers earlier trials.
 
 With Node.js, npm, and Git available, run this command in your project:
 
@@ -70,6 +70,8 @@ The skill keeps your language. Its instructions are in Chinese, but it also supp
 
 | Document | What the skill helps the reader do |
 | --- | --- |
+| Research report | Understand what the sources agree on, where they differ, and how far the evidence goes. |
+| Decision memo or product design | See the recommendation, tradeoffs, and what would change the decision. |
 | README | Find the product's purpose and complete the first useful task. |
 | Setup guide or tutorial | Meet prerequisites, follow steps, and check the result. |
 | API documentation | Find the right call, preserve parameters, and understand the response. |
@@ -82,24 +84,24 @@ Its scope excludes marketing copy, literary writing, and format-only conversion.
 
 ## Other install methods
 
-The Codex CLI plugin and Claude Code routes below passed public installation checks. Desktop selection and model behavior remain unverified. Install one copy for your chosen agent to avoid duplicate skill entries.
+Choose one installation route per client. See the verification record for the tested clients and model tasks. Desktop selection remains unverified.
 
 ### Codex
 
 The Codex CLI route passed with version 0.162.1:
 
 ```sh
-codex plugin marketplace add joevilcai666/writing-doc-skill --ref v0.1.0 --json
+codex plugin marketplace add joevilcai666/writing-doc-skill --ref v0.2.0 --json
 codex plugin add writing-doc@writing-doc-skill --json
 codex plugin list --json
 ```
 
-The plugin appeared installed and enabled. Its installed `SKILL.md` matched the tag byte for byte.
+Check that the list reports an enabled plugin at version `0.2.0`.
 
 Use the built-in Skill Installer in a Codex chat:
 
 ```text
-$skill-installer install https://github.com/joevilcai666/writing-doc-skill/tree/v0.1.0/skills/writing-doc
+$skill-installer install https://github.com/joevilcai666/writing-doc-skill/tree/v0.2.0/skills/writing-doc
 ```
 
 This separate Skill Installer route remains **Planned for v0.1.0 verification**. It installs the shared skill. Confirm that `writing-doc` appears in the skill selector. If it does not appear, restart Codex. See the [official local skill guidance](https://learn.chatgpt.com/docs/build-skills#install-curated-skills-for-local-use).
@@ -115,7 +117,7 @@ claude plugin marketplace add joevilcai666/writing-doc-skill
 claude plugin install writing-doc@writing-doc-skill --scope local
 ```
 
-These commands passed with Claude Code 2.1.295 in isolated homes. The CLI listed the plugin as enabled, and the installed skill matched the source. The marketplace registration applies to your user account. The plugin's local scope applies only to you in the current project. Start a new Claude Code session, then confirm that the plugin appears in `/plugin`.
+The marketplace registration applies to your user account. The plugin's local scope applies only to you in the current project. Start a new Claude Code session, then confirm that the plugin appears in `/plugin`.
 
 See the [official Claude Code installation guide](https://code.claude.com/docs/en/discover-plugins).
 
@@ -126,7 +128,7 @@ Use a tag to keep the skill source fixed. The quick install command above tracks
 For `skills`, use the direct tagged path:
 
 ```sh
-npx skills add https://github.com/joevilcai666/writing-doc-skill/tree/v0.1.0/skills/writing-doc --skill writing-doc
+npx skills add https://github.com/joevilcai666/writing-doc-skill/tree/v0.2.0/skills/writing-doc --skill writing-doc
 ```
 
 For Claude Code, use either the current-branch registration or the tagged registration. Before you replace an existing registration, check the removal effects.
@@ -136,22 +138,22 @@ For Claude Code, use either the current-branch registration or the tagged regist
 If you choose to switch, run that removal command. Then add the tagged marketplace:
 
 ```sh
-claude plugin marketplace add joevilcai666/writing-doc-skill#v0.1.0
+claude plugin marketplace add joevilcai666/writing-doc-skill#v0.2.0
 ```
 
 After you add the tagged marketplace, reinstall the affected copies in their original scopes. For a local copy, repeat `claude plugin install writing-doc@writing-doc-skill --scope local`.
 
-A Git tag fixes the skill source, not the version of your installer or agent. Tagged `skills`, Codex CLI, and Claude marketplace installations passed. Replacement of an existing marketplace registration remains unverified.
+A Git tag fixes the skill source, not the version of your installer or agent. See the verification record for the tested routes. Replacement of an existing marketplace registration remains unverified.
 
 ### Manual installation
 
 With Git available, clone the tagged source into a new directory:
 
 ```sh
-git clone --depth 1 --branch v0.1.0 https://github.com/joevilcai666/writing-doc-skill.git
+git clone --depth 1 --branch v0.2.0 https://github.com/joevilcai666/writing-doc-skill.git
 ```
 
-Copy the entire `skills/writing-doc` folder to your client's skill directory. For a Codex project, use `.agents/skills/writing-doc`. The tagged clone and this folder copy passed a byte comparison. Client discovery remains unverified. Keep `SKILL.md` inside that folder. If a `writing-doc` folder already exists, compare it before you replace anything.
+Copy the entire `skills/writing-doc` folder to your client's skill directory. For a Codex project, use `.agents/skills/writing-doc`. Keep `SKILL.md` inside that folder. If a `writing-doc` folder already exists, compare it before you replace anything.
 
 For other clients, use their documented Agent Skills directory. Confirm that the client lists `writing-doc`, then try a small synthetic document.
 
@@ -183,11 +185,11 @@ The package does not modify `AGENTS.md`, `CLAUDE.md`, or global agent instructio
 | Evidence | Current status |
 | --- | --- |
 | Implemented | One shared skill, client manifests, approved visuals, synthetic demo, and local checks exist. |
-| Locally verified | The exact release commit passed 125 tests, the full release gate, full-history privacy checks, the skill validator, real isolated Codex installation, and Claude strict validation. |
-| Publicly verified | Anonymous main/tag clones, the Release ZIP and checksum, default/tagged `skills` installations, Codex pinned plugin installation/removal, and Claude main/tag plugin installations passed. Installed skills matched the tag. |
+| Locally verified | The v0.2.0 record lists the exact commit, regression and release checks, and isolated client verification. |
+| Publicly verified | See the [v0.2.0 verification record](docs/verification/v0.2.0.md) for public checks and the [v0.1.0 record](docs/verification/v0.1.0.md) for earlier routes. |
 | User accepted | No acceptance evidence exists for this package implementation. |
 
-Release [v0.1.0](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.1.0) is public. Codex CLI 0.162.1 has no `plugin validate` command. The release gate used real marketplace installation and a byte comparison instead. Model behavior, reader outcomes, desktop discovery, and other removal routes remain unverified. See [current behavior and limits](HOW_IT_WORKS.md) and [distribution status](docs/distribution.md).
+The [v0.2.0 release](https://github.com/joevilcai666/writing-doc-skill/releases/tag/v0.2.0) provides the ZIP and its SHA-256 checksum. The A/B evaluation uses synthetic tasks and model readers. See [current behavior and limits](HOW_IT_WORKS.md) and [distribution status](docs/distribution.md).
 
 ## Help improve the next reader's experience
 
